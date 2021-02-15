@@ -16,6 +16,7 @@ Instructors:
 
  - Anne Vinkel Hansen (aih@dst.dk)
  - Signe Hermann (she@dst.dk)
+ - Jolien Cremers (x39@dst.dk)
 
 
 ---
@@ -122,18 +123,13 @@ type `Yes` in the console and press the return key.
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part A: Introduction
-    <!-- - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html) -->
-    <!-- - [Lecture A Handout](Contents/Material/Part A - Introduction/Lecture_A_handout.html) -->
-    <!-- - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html) -->
-    <!-- - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R) -->
+    - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html)
+    - [Practical A](Contents/Material/Part A - Introduction/Practical_A.html)
+    - [Practical A with solutions](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
+    - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
     <!-- - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd) -->
+    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
 
-- Part B: How is `R` organized?
-    <!-- - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html) -->
-    <!-- - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html) -->
-    <!-- - [Practical B](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html) -->
-    <!-- - [Impractical B](Contents/Material/Part B - How is R organized/Practical_B.html) -->
-    <!-- - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData) -->
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
 
@@ -160,12 +156,11 @@ The above links are useful references that connect to today's materials.
 
 ### Materials
 
-- Part C: `R` Functionality and reading in data
-    <!-- - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html) -->
-    <!-- - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html) -->
-    <!-- - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html) -->
-    <!-- - [Practical C with solutions](Contents/Material/Part C - R-functionality/Practical_C.html) -->
-    <!-- - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt) -->
+- Part B: `R` Functionality and reading in data
+    - [Lecture B](Contents/Material/Part B - R-functionality/Lecture_B.html)
+    - [Practical B](Contents/Material/Part B - R-functionality/Practical_B_walkthrough.html)
+    - [Practical B with solutions](Contents/Material/Part B - R-functionality/Practical_B.html)
+    - [`cabinet.txt`](Contents/Material/Part B - R-functionality/cabinet.txt)
 
 ## Column 2
 
@@ -181,10 +176,10 @@ The above links are useful references that connect to today's materials.
 ## Column 1
 
 ### Materials
-- Part D: Data manipulation and basic statistics
-    <!-- - [Lecture D](Contents/Material/Part F - Pipes/Lecture_F.html) -->
-    <!-- - [Practical D](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html) -->
-    <!-- - [Impractical D](Contents/Material/Part F - Pipes/Practical_F.html) -->
+- Part C: Data manipulation and basic statistics
+    - [Lecture C](Contents/Material/Part C - Pipes/Lecture_C.html)
+    - [Practical C](Contents/Material/Part C - Pipes/Practical_C_walkthrough.html)
+    - [Practical C with solutions](Contents/Material/Part C - Pipes/Practical_C.html)
     
 ## Column 2
 
@@ -199,7 +194,7 @@ The above links are useful references that connect to today's materials.
 ## Column 1
 
 ### Materials
-- Part E: Data visualization
+- Part D: Data visualization
     <!-- - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html) -->
     <!-- - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html) -->
     <!-- - [Practical E - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html) -->
