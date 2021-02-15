@@ -1,0 +1,56 @@
+---
+title: "Practical C"
+author: "Gerko Vink, Anne Vinkel Hansen & Peter Stoltze"
+date: "Statistical Programming with R"
+output: html_document
+---
+
+---
+
+#### Exercises
+Begin this practical by setting the maximum line length in `R-Studio` to 80 characters. Go to `RStudio`'s `Preferences` (or `Global Options` under `Tools`) --> `Code` --> `Display`, and tick the `show margin` box. Make sure that the `margin column` is set to `80`
+
+This is also a good time to set Rstudio to not automatically restore .RData into workspace at startup and not to save workspace to .RData on exit. (`Tools` --> `Global Options` --> `General`)
+
+---
+
+1. **Load package `mice`. **
+
+---
+
+2. **Most packages have datasets included. Open the `mammalsleep` dataset from package `mice` by typing `mammalsleep` in the console, and subsequently by using the function `View()`. **
+
+---
+
+3. **Write the mammalsleep dataset from package `mice` to the work directory as a tab-delimited text file with `.` as a decimal seperator. Name the file `mammalsleep.txt`**
+
+---
+
+4. **Import the `mammalsleep.txt` file. **
+
+---
+
+5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. **
+
+---
+
+6. **Save the current workspace. Name the workspace `Practical_C.RData`. Also, save the sleepdata file as a separate workspace called `Sleepdata.RData`. **
+
+
+---
+
+7. **Some animals were not used in the calculations by Allison and Cicchetti. Exclude the following animals from the sleepdata dataset: Echidna, Lesser short-tailed shrew and Musk shrew. Save the dataset as sleepdata2.** Tip: use the square brackets to indicate [rows, columns].
+
+---
+
+8. **Let's try reading in some data with special characters. On the course homepage, you will find the file `cabinet.txt`. Try reading this into R, and try getting the special characters right**
+If you're going to work with special characters in your code files (say, writing comments in Danish) you will want to set the RStudio encoding to UTF-8 as welll, under `Tools` --> `Global Options` --> `Code` --> `Saving` 
+
+---
+
+End of exercise 
+
+---
+
+
+

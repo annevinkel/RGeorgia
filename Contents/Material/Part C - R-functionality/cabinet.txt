@@ -1,0 +1,21 @@
+Portfolio	Minister	Took.office	Left.office	Party
+Prime Minister	Mette Frederiksen	27 June 2019	Incumbent	Social Democrats
+Minister for Foreign Affairs	Jeppe Kofod	27 June 2019	Incumbent	Social Democrats
+Minister for Finance	Nicolai Wammen	27 June 2019	Incumbent	Social Democrats
+Minister of Social Affairs and the Interior	Astrid Krag	27 June 2019	Incumbent	Social Democrats
+Minister for Justice	Nick Hækkerup	27 June 2019	Incumbent	Social Democrats
+Minister for Industry, Business and Financial Affairs	Simon Kollerup	27 June 2019	Incumbent	Social Democrats
+Minister for Defence	Trine Bramsen	27 June 2019	Incumbent	Social Democrats
+Minister for Employment	Peter Hummelgaard Thomsen	27 June 2019	Incumbent	Social Democrats
+Minister for Immigration and Integration	Mattias Tesfaye	27 June 2019	Incumbent	Social Democrats
+Minister for Children and Education	Pernille Rosenkrantz-Theil	27 June 2019	Incumbent	Social Democrats
+Minister for Health and Elderly Affairs	Magnus Heunicke	27 June 2019	Incumbent	Social Democrats
+Minister for Culture and Church	Joy Mogensen	27 June 2019	Incumbent	Social Democrats
+Minister for Science, Technology, Information and Higher Education	Ane Halsboe-Jørgensen	27 June 2019	Incumbent	Social Democrats
+Minister for Building and Housing	Kaare Dybvad	27 June 2019	Incumbent	Social Democrats
+Minister for Transport	Benny Engelbrecht	27 June 2019	Incumbent	Social Democrats
+Minister for Taxation	Morten Bødskov	27 June 2019	Incumbent	Social Democrats
+Minister for Climate, Energy and Utilities	Dan Jørgensen	27 June 2019	Incumbent	Social Democrats
+Minister for Development Cooperation	Rasmus Prehn	27 June 2019	Incumbent	Social Democrats
+Minister for the Environment	Lea Wermelin	27 June 2019	Incumbent	Social Democrats
+Minister for Food, Fishery, Equality & Minister for Nordic Cooperation	Mogens Jensen	27 June 2019	Incumbent	Social Democrats
