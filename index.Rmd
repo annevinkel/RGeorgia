@@ -15,6 +15,7 @@ This dashboard covers the materials for the course introducing R. Course held fo
 Instructors: 
 
  - Anne Vinkel Hansen (aih@dst.dk)
+ - Signe Hermann (she@dst.dk)
 
 
 ---
@@ -121,18 +122,18 @@ type `Yes` in the console and press the return key.
 We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online.
 
 - Part A: Introduction
-    - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html)
-    - [Lecture A Handout](Contents/Material/Part A - Introduction/Lecture_A_handout.html)
-    - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
-    - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
-    - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd)
+    <!-- - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html) -->
+    <!-- - [Lecture A Handout](Contents/Material/Part A - Introduction/Lecture_A_handout.html) -->
+    <!-- - [Practical A](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html) -->
+    <!-- - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R) -->
+    <!-- - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd) -->
 
 - Part B: How is `R` organized?
-    - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html)
-    - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html)
-    - [Practical B](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html)
-    - [Impractical B](Contents/Material/Part B - How is R organized/Practical_B.html)
-    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
+    <!-- - [Lecture B](Contents/Material/Part B - How is R organized/Lecture_B.html) -->
+    <!-- - [Lecture B Handout](Contents/Material/Part B - How is R organized/Lecture_B_handout.html) -->
+    <!-- - [Practical B](Contents/Material/Part B - How is R organized/Practical_B_walkthrough.html) -->
+    <!-- - [Impractical B](Contents/Material/Part B - How is R organized/Practical_B.html) -->
+    <!-- - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData) -->
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
 
@@ -160,11 +161,11 @@ The above links are useful references that connect to today's materials.
 ### Materials
 
 - Part C: `R` Functionality and reading in data
-    - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html)
-    - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html)
-    - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html)
-    - [Practical C with solutions](Contents/Material/Part C - R-functionality/Practical_C.html)
-    - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt)
+    <!-- - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html) -->
+    <!-- - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html) -->
+    <!-- - [Practical C](Contents/Material/Part C - R-functionality/Practical_C_walkthrough.html) -->
+    <!-- - [Practical C with solutions](Contents/Material/Part C - R-functionality/Practical_C.html) -->
+    <!-- - [`cabinet.txt`](Contents/Material/Part C - R-functionality/cabinet.txt) -->
 
 ## Column 2
 
@@ -181,9 +182,9 @@ The above links are useful references that connect to today's materials.
 
 ### Materials
 - Part D: Data manipulation and basic statistics
-    - [Lecture D](Contents/Material/Part F - Pipes/Lecture_F.html)
-    - [Practical D](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html)
-    - [Impractical D](Contents/Material/Part F - Pipes/Practical_F.html)
+    <!-- - [Lecture D](Contents/Material/Part F - Pipes/Lecture_F.html) -->
+    <!-- - [Practical D](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html) -->
+    <!-- - [Impractical D](Contents/Material/Part F - Pipes/Practical_F.html) -->
     
 ## Column 2
 
@@ -199,11 +200,11 @@ The above links are useful references that connect to today's materials.
 
 ### Materials
 - Part E: Data visualization
-    - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html)
-    - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
-    - [Practical E - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html)
-    - [Impractical E](Contents/Material/Part I - Data visualization/Practical_i.html).
-    - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities
+    <!-- - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html) -->
+    <!-- - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html) -->
+    <!-- - [Practical E - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html) -->
+    <!-- - [Impractical E](Contents/Material/Part I - Data visualization/Practical_i.html). -->
+    <!-- - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities -->
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.
 
@@ -227,10 +228,10 @@ The `sf` setup for `R` is relatively new, and a lot of material about spatial da
 
 ### Materials
 - Part E: Loops and functions
-    - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
-    - [Lecture F Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html)
-    - [Practical F](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html)
-    - [Practical F with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html)
+    <!-- - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html) -->
+    <!-- - [Lecture F Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html) -->
+    <!-- - [Practical F](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html) -->
+    <!-- - [Practical F with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html) -->
 
 All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
 
@@ -257,3 +258,5 @@ The following references are currently available for free, either as pdfs or as 
 - [Introduction to Statistical Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/): an introductory book on statistical learning, with applications in R. The R code is somewhat old-style and you might be able to find newer packages for the tasks, but ths is a solid read well worth the effort.
 - [Data Analysis and Graphics Using R](http://www.pindex.com/uploads/post_docs/Maindonald%20Data%20Analysis%20and%20Graphics(PINDEX-DOC-6953).pdf): a detailed book that covers a lot about categorical data analysis and fitting `glm`s in `R`.
 
+
+## Column 2
