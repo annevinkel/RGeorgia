@@ -6,9 +6,9 @@ output:
     vertical_layout: scroll
 ---
 
-# Intro {.sidebar}
+# Intro{.sidebar}
 
-This dashboard covers the materials for the course introducing R. Course held for Geostat, February 2021.
+This dashboard covers the materials for the course introducing R. Course held for GeoStat, February 2021.
 
 ---
 
@@ -23,7 +23,6 @@ Material adopted from [Gerko Vink](https://github.com/gerkovink/R)
 
 
 ---
-
 # Quick Overview
 
 ## Column 1
@@ -108,6 +107,12 @@ compilation? (Yes/no/cancel)
 type `Yes` in the console and press the return key. 
 
 
+## Column 2
+
+### More about installing R
+
+- [An introduction to R](https://intro2r.com/) Chapter 1
+
 # Tuesday 16th
 
 ## Column 1
@@ -152,6 +157,8 @@ The above links are useful references that connect to today's materials.
 
 ## Column 1
 
+### Materials
+
 - Part C: `R` Functionality and reading in data
     - [Lecture C](Contents/Material/Part C - R-functionality/Lecture_C.html)
     - [Lecture C Handout](Contents/Material/Part C - R-functionality/Lecture_C_handout.html)
@@ -172,6 +179,7 @@ The above links are useful references that connect to today's materials.
 
 ## Column 1
 
+### Materials
 - Part D: Data manipulation and basic statistics
     - [Lecture D](Contents/Material/Part F - Pipes/Lecture_F.html)
     - [Practical D](Contents/Material/Part F - Pipes/Practical_F_walkthrough.html)
@@ -189,6 +197,7 @@ The above links are useful references that connect to today's materials.
 
 ## Column 1
 
+### Materials
 - Part E: Data visualization
     - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html)
     - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
@@ -215,6 +224,8 @@ The `sf` setup for `R` is relatively new, and a lot of material about spatial da
 # Thursday 25th 
 
 ## Column 1
+
+### Materials
 - Part E: Loops and functions
     - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
     - [Lecture F Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html)
