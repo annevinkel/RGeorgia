@@ -124,7 +124,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 - Part A: Introduction
     - [Lecture A](Contents/Material/Part A - Introduction/Lecture_A.html)
-    - [Practical A](Contents/Material/Part A - Introduction/Practical_A.html)
+    - [Practical A](Contents/Material/Part A - Introduction/Practical-A.html)
     - [Practical A with solutions](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
     <!-- - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd) -->
