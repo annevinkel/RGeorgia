@@ -128,7 +128,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [Practical A with solutions](Contents/Material/Part A - Introduction/Practical_A_walkthrough.html)
     - [`notebook.R`](Contents/Material/Part A - Introduction/notebook.R)
     <!-- - [`markdown.Rmd`](Contents/Material/Part A - Introduction/markdown.Rmd) -->
-    - [`boys.RData`](Contents/Material/Part B - How is R organized/boys.RData)
+    - [`boys.RData`](Contents/Material/Part A - Introduction/boys.RData)
 
 
 All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
