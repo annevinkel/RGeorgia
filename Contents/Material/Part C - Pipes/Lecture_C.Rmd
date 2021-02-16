@@ -1,6 +1,6 @@
 ---
-title: 'Data manipulation and pipes'
-author: "Gerko Vink & Erik-Jan van Kesteren"
+title: 'Data manipulation'
+author: "Anne Vinkel, Gerko Vink & Erik-Jan van Kesteren"
 date: "Statistical Programming with R"
 output:
   ioslides_presentation:
@@ -18,30 +18,14 @@ output:
 
 - Basic analysis (correlation & t-test)
 
-- Pipes
 
 ## New packages we use
 ```{r warning=FALSE, message=FALSE}
 library(MASS)     # for the cats data
-library(dplyr)    # data manipulation
 library(haven)    # in/exporting data
-library(magrittr) # pipes
+library(magrittr) # for pipes
+library(dplyr)    # data manipulation
 ```
-
-<img src="pipe.jpg" style="display:block;width:500px;margin-left:auto;margin-right:auto"></img>
-
-## New functions
-
-- `transform()`: changing and adding columns
-- `dplyr::filter()`: row-wise selection (of cases)
-- `table()`: frequency tables
-- `class()`: object class
-- `levels()`: levels of a factor
-- `order()`: data entries in increasing order
-- `haven::read_sav()`: import SPSS data
-- `cor()`: bivariate correlation
-- `sample()`: drawing a sample
-- `t.test()`: t-test 
 
 # Data manipulation
 
@@ -77,10 +61,10 @@ dim(heavy.cats)
 head(heavy.cats)
 ```
 
-## another way: `dplyr`
-```{r}
-filter(cats, Bwt > 2, Bwt < 2.2, Sex == "F")
-```
+<!-- ## another way: `dplyr` -->
+<!-- ```{r} -->
+<!-- filter(cats, Bwt > 2, Bwt < 2.2, Sex == "F") -->
+<!-- ``` -->
 
 
 ## Working with factors
@@ -118,7 +102,15 @@ rbind(cats[1:3, ], cats[1:5, ])
 
 
 # Basic analysis
+
 ## Correlation
+
+```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'}
+plot(cats$Bwt, cats$Hwt)
+```
+
+## Correlation
+Let's compute the correlation with the `cor` function. According to the help file (`?cor`), we can use just `cats[,-1]` as input
 
 ```{r}
 cor(cats[, -1])
@@ -131,26 +123,16 @@ With `[, -1]` we exclude the first column
 cor.test(cats$Bwt, cats$Hwt)
 ```
 
-What do we conclude?
-
-## Correlation
-
-```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'}
-plot(cats$Bwt, cats$Hwt)
-```
-
-## T-test
-Test the null hypothesis that the difference in mean heart weight between male and female cats is 0
-```{r}
-t.test(formula = Hwt ~ Sex, data = cats)
-```
-
-## T-test
-```{r fig.height=5, fig.width=5, dev.args = list(bg = 'transparent'), fig.align='center'}
-plot(formula = Hwt ~ Sex, data = cats)
-```
 
 # Pipes
+
+## Pipes
+
+Pipes are a very useful tool from the `magrittr` package that allow you to chain a 
+sequence of operations in a readable and intuitive manner. 
+
+They're also an entirely new syntax, so we will not focus on them in this course. 
+Links on the course webpage if you want to learn more. 
 
 ## This is a pipe:
 
@@ -222,86 +204,4 @@ cats %>%
   filter(Hwt > mean(Hwt) + 3 * sd(Hwt))
 ```
 
-# More pipe stuff
-
-## The standard `%>%` pipe
-<center>
-<img src="flow_pipe.png" alt="HTML5 Icon" width = 75%>
-</center>
-
-## The `%$%` pipe
-<center>
-<img src="flow_$_pipe.png" alt="HTML5 Icon" width = 75%>
-</center>
-
-## The `%T>%` pipe
-<center>
-<img src="flow_T_pipe.png" alt="HTML5 Icon" width = 100%>
-</center>
-
-## The role of `.` in a pipe
-In `a %>% b(arg1, arg2, arg3)`, `a` will become `arg1`. With `.` we can change this.
-```{r error=TRUE}
-set.seed(123)
-1:5 %>%
-  mean() %>%
-  rnorm(10)
-```
-VS
-```{r}
-set.seed(123)
-1:5 %>% 
-  mean() %>%
-  rnorm(n = 10, mean = .)
-```
-The `.` can be used as a placeholder in the pipe. 
-
-## Placeholder example
-Remember: `sample()` takes a random sample from a vector
-```{r}
-sample(x = c(1, 1, 2, 3, 5, 8), size = 2)
-```
-
-Sample 3 positions from the alphabet and show the position and the letter
-```{r}
-set.seed(123)
-1:26 %>%
-  sample(3) %>%
-  paste(., LETTERS[.])
-```
-
-## Debugging pipelines
-If you don't know what's going on, run each statement separately!
-```{r}
-set.seed(123)
-1:26
-
-set.seed(123)
-1:26 %>% 
-  sample(3)
-
-set.seed(123)
-1:26 %>%
-  sample(3) %>%
-  paste(., LETTERS[.])
-```
-
-## Performing a t-test in a pipe
-```{r message=FALSE}
-cats %$%
-  t.test(Hwt ~ Sex)
-```
-is the same as 
-```{r eval=FALSE}
-t.test(Hwt ~ Sex, data = cats)
-```
-
-## Storing a t-test from a pipe
-```{r}
-cats.test <- 
-  cats %$%
-  t.test(Bwt ~ Sex)
-
-cats.test
-```
 # Practical 

@@ -155,11 +155,30 @@ The above links are useful references that connect to today's materials.
 ## Column 1
 
 ### Materials
+- Part C: Data manipulation and basic statistics
+    - [Lecture C](Contents/Material/Part C - Pipes/Lecture_C.html)
+    - [Practical C](Contents/Material/Part C - Pipes/Practical_C.html)
+    - [Practical C with solutions](Contents/Material/Part C - Pipes/Practical_C_walkthrough.html)
+    
+## Column 2
+
+### Useful links
+
+- [`magrittr`](https://magrittr.tidyverse.org)
+- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
+- [R-bloggers tutorial on pipes](https://www.r-bloggers.com/2017/12/pipes-in-r-tutorial-for-beginners/)
+
+
+# Thursday 18th 
+
+## Column 1
+
+### Materials
 
 - Part B: `R` Functionality and reading in data
     - [Lecture B](Contents/Material/Part B - R-functionality/Lecture_B.html)
-    - [Practical B](Contents/Material/Part B - R-functionality/Practical_B_walkthrough.html)
-    - [Practical B with solutions](Contents/Material/Part B - R-functionality/Practical_B.html)
+    - [Practical B](Contents/Material/Part B - R-functionality/Practical_B.html)
+    - [Practical B with solutions](Contents/Material/Part B - R-functionality/Practical_B_walkthrough.html)
     - [`cabinet.txt`](Contents/Material/Part B - R-functionality/cabinet.txt)
 
 ## Column 2
@@ -169,24 +188,6 @@ The above links are useful references that connect to today's materials.
 - [An introduction to R](https://intro2r.com/) Chapter 1-3
 - [Hands-on programming with R](https://rstudio-education.github.io/hopr/)
 
-
-
-# Thursday 18th 
-
-## Column 1
-
-### Materials
-- Part C: Data manipulation and basic statistics
-    - [Lecture C](Contents/Material/Part C - Pipes/Lecture_C.html)
-    - [Practical C](Contents/Material/Part C - Pipes/Practical_C_walkthrough.html)
-    - [Practical C with solutions](Contents/Material/Part C - Pipes/Practical_C.html)
-    
-## Column 2
-
-### Useful links
-
-- [`magrittr`](https://magrittr.tidyverse.org)
-- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
 
 
 # Tuesday 23rd
