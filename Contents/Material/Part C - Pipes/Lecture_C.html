@@ -3279,16 +3279,16 @@ head(sorted.cats)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Combining matrices or dataframes</h2></hgroup><article  class="smaller " id="combining-matrices-or-dataframes">
 
-<pre class = 'prettyprint lang-r'>cats.numbers &lt;- cbind(Weight = cats$Bwt, Height = cats$Hwt)
-head(cats.numbers)</pre>
+<pre class = 'prettyprint lang-r'>cats.wider &lt;- cbind( cats, 1:144)
+head(cats.wider)</pre>
 
-<pre >##      Weight Height
-## [1,]    2.0    7.0
-## [2,]    2.0    7.4
-## [3,]    2.0    9.5
-## [4,]    2.1    7.2
-## [5,]    2.1    7.3
-## [6,]    2.1    7.6</pre>
+<pre >##      Sex Bwt Hwt 1:144
+## 1 Female 2.0 7.0     1
+## 2 Female 2.0 7.4     2
+## 3 Female 2.0 9.5     3
+## 4 Female 2.1 7.2     4
+## 5 Female 2.1 7.3     5
+## 6 Female 2.1 7.6     6</pre>
 
 </article></slide><slide class=""><hgroup><h2>Combining matrices or dataframes</h2></hgroup><article  class="smaller " id="combining-matrices-or-dataframes-1">
 
@@ -3394,7 +3394,7 @@ boys4 &lt;- subset(boys3, select = c(hgt, wgt, bmi))</pre>
 
 <pre class = 'prettyprint lang-r'>rnorm(10) %&gt;% mean()</pre>
 
-<pre >## [1] 0.2284005</pre>
+<pre >## [1] -0.1626751</pre>
 
 <ul>
 <li><code>f(x, y)</code> becomes <code>x %&gt;% f(y)</code></li>

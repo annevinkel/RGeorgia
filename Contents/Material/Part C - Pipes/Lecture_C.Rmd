@@ -30,6 +30,7 @@ library(dplyr)    # data manipulation
 # Data manipulation
 
 ## The cats data
+
 ```{r}
 head(cats)
 ```
@@ -91,8 +92,8 @@ head(sorted.cats)
 ## Combining matrices or dataframes
 
 ```{r}
-cats.numbers <- cbind(Weight = cats$Bwt, Height = cats$Hwt)
-head(cats.numbers)
+cats.wider <- cbind( cats, 1:144)
+head(cats.wider)
 ```
 
 ## Combining matrices or dataframes

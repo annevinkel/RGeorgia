@@ -47,7 +47,7 @@ rnorm(1000, 5) %>%
 
 ---
 
-2. **Use a pipe to assign values `1:5` to object `x` and verify that the object exists.**
+<!-- 2. **Use a pipe to assign values `1:5` to object `x` and verify that the object exists.** -->
 
 <!-- Normally, when we use the following code to assign values to an object, we can directly run -->
 <!-- ```{r, eval=FALSE} -->
