@@ -10,7 +10,7 @@ output: html_document
 #### Exercises
 Begin this practical by setting the maximum line length in `R-Studio` to 80 characters. Go to `RStudio`'s `Preferences` (or `Global Options` under `Tools`) --> `Code` --> `Display`, and tick the `show margin` box. Make sure that the `margin column` is set to `80`
 
-This is also a good time to set Rstudio to not automatically restore .RData into workspace at startup and not to save workspace to .RData on exit. (`Tools` --> `Global Options` --> `General`)
+This is also a good time to set Rstudio to **not** automatically restore .RData into workspace at startup and not to save workspace to .RData on exit. (`Tools` --> `Global Options` --> `General`)
 
 ---
 

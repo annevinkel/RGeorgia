@@ -27,7 +27,7 @@ output:
 
 ## Packages
 
-- Collections of functions, data made by other `R` users for the good of the `R` community.
+- Collections of functions and data made by other `R` users for the good of the `R` community.
 - There's almost certainly a package for what you want to do
   - but "buyer beware"
   
@@ -54,7 +54,18 @@ Alternatively, you can also do it in `RStudio` through
 
 `Tools --> Install Packages`
 
-## Packages
+## Installing packages
+
+- Can you trust a package?
+  - As I said: "Buyer beware"
+  - CRAN has some minimal checks
+  - Things to look for:
+    - Is the creator trustworthy?
+    - Is the package well-documented and maintained?
+    - Does it have many users? 
+    - Do the creator/s respond to bug reports?
+
+## Environments
 
 ```{r, eval=F}
 ## Do we have any object named starwars?
@@ -69,14 +80,6 @@ starwars
 
 The package `dplyr` has its own environment, nested in but hidden from the global environment.  
 
-<!-- ## Layers in `R` -->
-<!-- There are several 'layers' in `R`. Some layers you are allowed to fiddle around in, some are forbidden. In general there is the following distinction: -->
-
-<!-- - The global environment.  -->
-<!-- - User environments -->
-<!-- - Functions -->
-<!-- - Packages -->
-<!-- - Namespaces -->
 
 ## Environments
 The global environment can be seen as a olympic-size swimming pool. Everything you do has its place there. 
@@ -87,7 +90,7 @@ If you'd like, you may create another, separate environment to work in.
 
 ## Packages have their own environments
 
-- Everything needed to run the functions in a package is needly contained within its own space
+- Everything needed to run the functions in a package is neatly contained within its own space
 - See packages as separate (mini) pools that are connected to the main pool (the global environment)
     
 ## Functions
@@ -190,6 +193,8 @@ Remember the `boys` data from package `mice`:
 ```{r, message=F, echo=T, warning=F}
 library(mice)
 class(boys)
+
+class(boys$age)
 
 model <- lm(bmi ~ I(wgt / (hgt / 100)^2), data = boys)
 class(model)
