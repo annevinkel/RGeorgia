@@ -167,6 +167,7 @@ The above links are useful references that connect to today's materials.
 - [`magrittr`](https://magrittr.tidyverse.org)
 - [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
 - [R-bloggers tutorial on pipes](https://www.r-bloggers.com/2017/12/pipes-in-r-tutorial-for-beginners/)
+- [pipe tutorial on datacamp](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
 
 
 # Thursday 18th 
@@ -216,6 +217,8 @@ The above link details pretty much all you can do with package `ggplot2`.
 - [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/)
 
 The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.
+
+- [pipe tutorial on datacamp](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
 
 
 # Thursday 25th 
