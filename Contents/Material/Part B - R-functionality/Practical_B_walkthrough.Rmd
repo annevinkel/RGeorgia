@@ -54,7 +54,7 @@ There are many packages that facilitate importing datasets from other statistica
 
 ---
 
-5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. **
+5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. Create a new variable named "bw2" containing body weight in grams **
 
 If you would like to know more about this dataset, you can open the help for the `mammalsleep` dataset in package `mice` through `?mammalsleep`. Don't forget to load package `mice` first. 
 
@@ -74,6 +74,12 @@ The functions `head()` and `tail()` are very useful functions. As is function `s
 Since `mammalsleep` is an `R`-dataset, there should be a help file. Taking a look at `?mammalsleep` may yield valuable insight about the measurements and origin of the variables. 
 
 One thing that may have caught your attention is the relation between `ts`, `ps` and `sws`. This is a deterministic relation where total sleep (`ts`) is the sum of paradoxical sleep (`ps`) and short-wave sleep (`sws`). In the event that you would model the data, you need to take such relations into account. 
+
+To make a new variable containing body weight in grams, we transform the `bw` variable
+
+```{r}
+sleepdata$bw2 <- sleepdata$bw*1000
+```
 
 ---
 

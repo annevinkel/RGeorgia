@@ -26,11 +26,11 @@ This is also a good time to set Rstudio to **not** automatically restore .RData 
 
 ---
 
-4. **Import the `mammalsleep.txt` file. **
+4. **Import the `mammalsleep.txt` file.**
 
 ---
 
-5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it. **
+5. **The dataset we've just imported contains the sleepdata by Allison & Cicchetti (1976). Inspect the sleepdata and make yourself familiar with it.  Create a new variable named "bw2" containing body weight in grams **
 
 ---
 
