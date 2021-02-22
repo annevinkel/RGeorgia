@@ -131,8 +131,6 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
     - [`boys.RData`](Contents/Material/Part A - Introduction/boys.RData)
 
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions. 
-
 ## Column 2
 
 ### Useful references
@@ -197,13 +195,13 @@ The above links are useful references that connect to today's materials.
 
 ### Materials
 - Part D: Data visualization
-    <!-- - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html) -->
-    <!-- - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html) -->
-    <!-- - [Practical E - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html) -->
-    <!-- - [Impractical E](Contents/Material/Part I - Data visualization/Practical_i.html). -->
-    <!-- - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities -->
+    - [Lecture E](Contents/Material/Part I - Data visualization/Lecture_i.html)
+    - [Practical E](Contents/Material/Part I - Data visualization/Practical_i_walkthrough.html)
+    - [Practical E solutions - using ggplot](Contents/Material/Part I - Data visualization/Practical_i_walkthrough_ggplot.html)
+    - [Practical E solutions](Contents/Material/Part I - Data visualization/Practical_i.html).
+    - [DK_map.shp](Contents/Material/Part I - Data visualization/DK_map.shp), [DK_map.shx](Contents/Material/Part I - Data visualization/DK_map.shx), [DK_map.dbf](Contents/Material/Part I - Data visualization/DK_map.dbf), [DK_map.prj](Contents/Material/Part I - Data visualization/DK_map.prj)  shapefiles for mapping data on Danish municipalities
 
-All lectures are in `html` format. Practicals are walkthrough files that guide you through the exercises. `Impractical` files contain the exercises, without walkthrough, explanations and solutions.
+All lectures are in `html` format. 
 
 ## Column 2
 
@@ -214,12 +212,12 @@ All lectures are in `html` format. Practicals are walkthrough files that guide y
 
 The above link details pretty much all you can do with package `ggplot2`.
 
-- [Geocomputation with `R`](https://bookdown.org/robinlovelace/geocompr/)
+- [Geocomputation with `R`](https://geocompr.robinlovelace.net/)
 
 The `sf` setup for `R` is relatively new, and a lot of material about spatial data in `R` uses the older `sp` setup. This book is an introduction to spatial data the `sf` way.
 
 - [pipe tutorial on datacamp](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
-
+- [Graph gallery for inspiration](https://www.r-graph-gallery.com/)
 
 # Thursday 25th 
 
@@ -227,12 +225,11 @@ The `sf` setup for `R` is relatively new, and a lot of material about spatial da
 
 ### Materials
 - Part E: Loops and functions
-    <!-- - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html) -->
-    <!-- - [Lecture F Handout](Contents/Material/Part E - Functions apply and looping/Lecture_E_handout.html) -->
+    - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
     <!-- - [Practical F](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html) -->
     <!-- - [Practical F with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html) -->
-
-All lectures are in `html` format. Practicals are are provided both as naked questions but also with ample explanations and solutions - choose according to your taste!
+    
+The exercises today will be replaced by a bring-your-own-data workshop. 
 
 ## Column 2
 

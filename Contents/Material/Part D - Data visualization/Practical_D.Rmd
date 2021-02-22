@@ -35,6 +35,10 @@ set.seed(123)
 
 ---
 
+0. **Function `plot()` is the core plotting function in `R`. Find out more about `plot()`: Try both the help in the help-pane and `?plot` in the console. Look at the examples by running `example(plot)`.**
+
+---
+
 1. **Create a scatterplot between `age` and `bmi` in the `mice::boys` data set**
 
 ---

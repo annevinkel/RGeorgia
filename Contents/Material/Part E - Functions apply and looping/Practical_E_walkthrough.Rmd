@@ -2,7 +2,10 @@
 title: "Practical E"
 author: "Peter Stoltze and Anne Vinkel Hansen (adapted from Gerko Vink and Kees Mulder)"
 date: "Statistical Programming with R"
-output: html_document
+output: 
+html_document:
+    self_contained: false
+    lib_dir: libs
 ---
 
 ```{r echo=FALSE}

@@ -1354,6 +1354,11 @@ opacity: 0;
 }
 @media print {
 
+@page {
+size: landscape;
+margin: 0;
+}
+
 slides slide {
 display: block !important;
 position: relative;
@@ -3101,6 +3106,75 @@ slide:not(.current) .plotly.html-widget{
   display: block;
 }
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            pre > code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+            pre > code.sourceCode > span:empty { height: 1.2em; }
+            code.sourceCode > span { color: inherit; text-decoration: inherit; }
+            div.sourceCode { margin: 1em 0; }
+            pre.sourceCode { margin: 0; }
+            @media screen {
+            div.sourceCode { overflow: auto; }
+            }
+            @media print {
+            pre > code.sourceCode { white-space: pre-wrap; }
+            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+            }
+            pre.numberSource code
+              { counter-reset: source-line 0; }
+            pre.numberSource code > span
+              { position: relative; left: -4em; counter-increment: source-line; }
+            pre.numberSource code > span > a:first-child::before
+              { content: counter(source-line);
+                position: relative; left: -1em; text-align: right; vertical-align: baseline;
+                border: none; display: inline-block;
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+                padding: 0 4px; width: 4em;
+                color: #aaaaaa;
+              }
+            pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+            div.sourceCode
+              {   }
+            @media screen {
+            pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+            }
+            code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+            code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+            code span.at { color: #7d9029; } /* Attribute */
+            code span.bn { color: #40a070; } /* BaseN */
+            code span.bu { } /* BuiltIn */
+            code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+            code span.ch { color: #4070a0; } /* Char */
+            code span.cn { color: #880000; } /* Constant */
+            code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+            code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+            code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+            code span.dt { color: #902000; } /* DataType */
+            code span.dv { color: #40a070; } /* DecVal */
+            code span.er { color: #ff0000; font-weight: bold; } /* Error */
+            code span.ex { } /* Extension */
+            code span.fl { color: #40a070; } /* Float */
+            code span.fu { color: #06287e; } /* Function */
+            code span.im { } /* Import */
+            code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+            code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+            code span.op { color: #666666; } /* Operator */
+            code span.ot { color: #007020; } /* Other */
+            code span.pp { color: #bc7a00; } /* Preprocessor */
+            code span.sc { color: #4070a0; } /* SpecialChar */
+            code span.ss { color: #bb6688; } /* SpecialString */
+            code span.st { color: #4070a0; } /* String */
+            code span.va { color: #19177c; } /* Variable */
+            code span.vs { color: #4070a0; } /* VerbatimString */
+            code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -3131,7 +3205,7 @@ slide:not(.current) .plotly.html-widget{
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      
       <p data-config-presenter><!-- populated from slide_config.json --></p>
             <p style="margin-top: 6px; margin-left: -2px;">Statistical Programming with R</p>
           </hgroup>
@@ -3483,31 +3557,31 @@ MyList</pre>
 <pre class = 'prettyprint lang-r'>rand.mat &lt;- matrix(rnorm(24), nrow = 4, ncol = 6)
 rand.mat</pre>
 
-<pre >##            [,1]       [,2]        [,3]       [,4]       [,5]       [,6]
-## [1,]  0.3118498  0.7372355 -0.24505569 -0.1067608  0.2702824 -0.4082785
-## [2,]  0.4807063 -0.5224221  0.09494066 -0.5352040 -0.9067725  0.2330662
-## [3,] -0.3716503  0.8754206  0.81027105 -0.2964890 -1.0097126  0.2801066
-## [4,]  0.5063006  1.3775800  0.68500891  0.1737186 -0.2297650  0.8651789</pre>
+<pre >##           [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
+## [1,] -1.806141 -0.4283587 -0.3227969  1.5624976  0.5917907 -0.2393806
+## [2,]  0.421635 -0.1409153 -0.7192245 -0.9471022  1.7064073 -0.8123301
+## [3,]  1.737592  0.2152825  1.8410014  1.9114148  0.6012852  1.5632086
+## [4,]  1.100951 -1.2042099  0.2798130  1.1350610 -0.7886679 -1.5374710</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-15">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = max)</pre>
 
-<pre >## [1] 0.7372355 0.4807063 0.8754206 1.3775800</pre>
+<pre >## [1] 1.562498 1.706407 1.911415 1.135061</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = max)</pre>
 
-<pre >## [1] 0.5063006 1.3775800 0.8102711 0.1737186 0.2702824 0.8651789</pre>
+<pre >## [1] 1.7375916 0.2152825 1.8410014 1.9114148 1.7064073 1.5632086</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-16">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = sum)</pre>
 
-<pre >## [1]  0.9272064  2.4678140  1.3451649 -0.7647352 -1.8759676  0.9700732</pre>
+<pre >## [1]  1.454037 -1.558201  1.078793  3.661871  2.110815 -1.025973</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = var)</pre>
 
-<pre >## [1] 0.1799659 0.2906830 0.5466181 0.3105940</pre>
+<pre >## [1] 1.2659948 1.0286718 0.5182557 1.3686288</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>sapply()</code></h2></hgroup><article  id="sapply">
 
@@ -3657,19 +3731,19 @@ squared(-2)</pre>
 
 <pre class = 'prettyprint lang-r'>rand.mat</pre>
 
-<pre >##            [,1]       [,2]        [,3]       [,4]       [,5]       [,6]
-## [1,]  0.3118498  0.7372355 -0.24505569 -0.1067608  0.2702824 -0.4082785
-## [2,]  0.4807063 -0.5224221  0.09494066 -0.5352040 -0.9067725  0.2330662
-## [3,] -0.3716503  0.8754206  0.81027105 -0.2964890 -1.0097126  0.2801066
-## [4,]  0.5063006  1.3775800  0.68500891  0.1737186 -0.2297650  0.8651789</pre>
+<pre >##           [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
+## [1,] -1.806141 -0.4283587 -0.3227969  1.5624976  0.5917907 -0.2393806
+## [2,]  0.421635 -0.1409153 -0.7192245 -0.9471022  1.7064073 -0.8123301
+## [3,]  1.737592  0.2152825  1.8410014  1.9114148  0.6012852  1.5632086
+## [4,]  1.100951 -1.2042099  0.2798130  1.1350610 -0.7886679 -1.5374710</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, 2, squared)</pre>
 
-<pre >##            [,1]      [,2]        [,3]       [,4]       [,5]       [,6]
-## [1,] 0.09725032 0.5435161 0.060052292 0.01139787 0.07305260 0.16669132
-## [2,] 0.23107852 0.2729249 0.009013729 0.28644328 0.82223630 0.05431986
-## [3,] 0.13812393 0.7663613 0.656539182 0.08790574 1.01951952 0.07845971
-## [4,] 0.25634031 1.8977267 0.469237201 0.03017816 0.05279195 0.74853455</pre>
+<pre >##           [,1]       [,2]       [,3]      [,4]      [,5]       [,6]
+## [1,] 3.2621439 0.18349116 0.10419782 2.4413988 0.3502162 0.05730309
+## [2,] 0.1777761 0.01985714 0.51728393 0.8970026 2.9118260 0.65988017
+## [3,] 3.0192246 0.04634654 3.38928616 3.6535064 0.3615438 2.44362118
+## [4,] 1.2120927 1.45012150 0.07829532 1.2883635 0.6219970 2.36381698</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-24">
 

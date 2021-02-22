@@ -3,8 +3,11 @@ title: "Practical I - with `ggplot2`"
 author: "Gerko Vink & Erik-Jan van Kesteren"
 date: "Statistical Programming in R"
 output:
-  html_document: default
+  html_document: 
+    self_contained: false
+    lib_dir: libs
   pdf_document: default
+  
 ---
 
 

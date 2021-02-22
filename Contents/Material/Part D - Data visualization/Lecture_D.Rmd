@@ -7,6 +7,8 @@ output:
     logo: logo_en.png
     smaller: yes
     widescreen: no
+    self_contained: false
+    lib_dir: libs
   beamer_presentation:
     colortheme: beaver
 ---
@@ -67,9 +69,9 @@ library(sf)       # Spatial features
 - Plotting with `ggplot2` graphics
 - Plotting data on maps
 
-## `base` graphics in `R`
+# `base` graphics in `R`
 
-First, recall:
+## Recall
 
 - Vectors
 
@@ -86,7 +88,15 @@ head(boys)
 
 ```
 
+## Recall
+
+To subset a vector use square brackets `v[1:5]`
+
 To call a variable in the data frame, use the $ notation: 
+```{r, eval=FALSE}
+boys$hgt
+```
+
 ```{r}
 boys$hgt[1:10]
 ```
@@ -106,12 +116,41 @@ plot(x = boys$hgt, y = boys$wgt, main = "Scatter plot",
      xlab = "Height", ylab = "Weight", bty = "L")
 ```
 
+## Scatter plot
+Breaking this down: 
+```{r,eval=F}
+plot( # Calling the base plot function
+      x = boys$hgt, # x coordinates
+      y = boys$wgt, # y coordinates
+      main = "Scatter plot",# Plot title
+      xlab = "Height", # x-axis label
+      ylab = "Weight", # y axis label
+      bty = "L" # Type of box around plot: "Shaped like an L"
+      )
+```
+
+See `?par` for more graphical parameters
+
+## Scatter plot
+
+Two ways of doing the same thing 
+```{r,eval = F}
+plot(x = boys$hgt, y = boys$wgt) 
+plot( hgt ~ wgt, data = boys)
+```
+
+The latter is the plot method for formulas. (*Formulas are an `R` class!*)
+
 ## Line chart
+
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
 plot(x = 1:5, y = exp(1:5), type = "l", main = "Line chart", bty = "L")
 ```
 
 ## Bar chart
+
+Beyond basic scatter/line plots, there are specific functions: 
+
 ```{r, fig.align='center', dev.args=list(bg="transparent")}
 counts <- table(boys$reg)
 
@@ -124,6 +163,15 @@ barplot(counts, main="Bar chart", ylab = "N")
 counts <- table(boys$reg)
 
 pie(x=counts, main="Pie chart")
+```
+
+## Pie chart
+
+Let's go one step back: 
+```{r, fig.align='center', dev.args=list(bg="transparent")}
+counts <- table(boys$reg)
+
+counts
 ```
 
 ## Histogram
@@ -188,7 +236,12 @@ boxplot(boys$hgt ~ boys$reg, main = "Boxplot",
 <!-- ``` -->
 
 
-## But what if we want more control?
+## The alternative to base plots
+
+- If we want to be able to set visual standards easily
+- ... and have a more unified graphics system
+- ... at the cost of some abstraction and a steeper intial learning curve
+- we go `ggplot`
 
 # ggplot2
 
@@ -208,27 +261,23 @@ With `ggplot2` you
 
 1: Provide the data
 ```{r, eval=FALSE}
-boys %>%
-  ggplot()
+ggplot( data = boys )
 ```
 
 2: map variable to aesthetics
 ```{r, eval=FALSE}
-boys %>%
-  ggplot(aes(x = age, y = bmi))
+  ggplot( data = boys, aes(x = hgt, y = wgt) )
 ```
 
 3: state which geometric object to display
 ```{r, eval=FALSE}
-boys %>%
-  ggplot(aes(x = age, y = bmi)) +
+ggplot( data = boys, aes(x = hgt, y = wgt) ) +
   geom_point()
 ```
 
 ## An example: scatterplot
 ```{r, echo=FALSE, fig.align='center'}
-boys %>%
-  ggplot(aes(x = age, y = bmi)) +
+ggplot(data = boys, aes(x = hgt, y = wgt )) +
   geom_point(na.rm = TRUE)
 ```
 
@@ -237,9 +286,8 @@ boys %>%
 Create the plot
 ```{r, fig.align='center', dev.args=list(bg="transparent"), warning=FALSE, message=FALSE}
 gg <- 
-  boys %>%
-  ggplot(aes(x = age, y = bmi)) +
-  geom_point()
+  ggplot( data = boys, aes( x = hgt, y = wgt ) ) +
+  geom_point( col = "dark green" )
 ```
 
 Add another layer (smooth fit line)
@@ -260,9 +308,6 @@ gg <- gg +
 plot(gg)
 ```
 
-## Why this syntax?
-<img src="ggani.gif" style="display:block;width:90%;margin:0 auto;"></img>
-
 ## Aesthetics
 
 - x
@@ -280,18 +325,18 @@ gg <-
   boys %>% 
   filter(!is.na(reg)) %>% 
   
-  ggplot(aes(x      = age, 
-             y      = bmi, 
-             size   = hc, 
-             colour = reg)) +
+  ggplot(aes(x      = hgt, 
+             y      = wgt, 
+             pch    = reg, 
+             colour = age)) +
   
-  geom_point(alpha = 0.5) +
+  geom_point( alpha = 0.5) +
   
-  labs(title  = "BMI trend for boys",
-       x      = "Age", 
-       y      = "BMI", 
-       size   = "Head circumference",
-       colour = "Region") +
+  labs(title  = "Trend for boys",
+       x      = "Height", 
+       y      = "Weight", 
+       pch    = "Region",
+       colour = "Age") +
   theme_minimal()
 ```
  
