@@ -1,5 +1,5 @@
 ---
-title: "Practical I"
+title: "Practical D"
 author: "Gerko Vink & Erik-Jan van Kesteren"
 date: "Statistical Programming in R"
 output:

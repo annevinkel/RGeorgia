@@ -1,5 +1,5 @@
 ---
-title: "Practical I - with `ggplot2`"
+title: "Practical D - with `ggplot2`"
 author: "Gerko Vink & Erik-Jan van Kesteren"
 date: "Statistical Programming in R"
 output:
