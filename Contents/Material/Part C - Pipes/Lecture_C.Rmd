@@ -9,6 +9,9 @@ output:
     logo: logo.png
     transition: faster
     smaller: true
+    html_document:
+    self_contained: false
+    lib_dir: libs
   beamer_presentation: default
 ---
 

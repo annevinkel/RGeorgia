@@ -2,7 +2,10 @@
 title: "Practical C"
 author: "Gerko Vink"
 date: "Statistical Programming in R"
-output: html_document
+output: 
+  html_document:
+    self_contained: false
+    lib_dir: libs
 ---
 
 

@@ -8,6 +8,7 @@ output:
     logo: figures/logo_en.png
     transition: 0
     smaller: yes
+    self_contained: false
     # widescreen: yes
   # html_document:
   #   # css: style_ho.css
