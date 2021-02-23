@@ -214,8 +214,7 @@ p + geom_point()</code></pre>
 <pre><code>## Warning: Removed 21 rows containing missing values (geom_point).</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Package <code>ggplot2</code> offers far greater flexibility in data visualization than the standard plotting devices in <code>R</code>. However, it has its own language, which allows you to easily expand graphs with additional commands. To make these expansions or layers clearly visible, it is advisable to use the plotting language conventions. For example,</p>
-<pre class="r"><code>mice::boys %&gt;% 
-  ggplot(aes(age, bmi)) +
+<pre class="r"><code>  ggplot( data = mice::boys, aes(age, bmi)) +
   geom_point()</code></pre>
 <p>would yield the same plot as</p>
 <pre class="r"><code>ggplot(mice::boys, aes(age, bmi)) + geom_point()</code></pre>
@@ -240,22 +239,18 @@ p + geom_point()</code></pre>
                                &quot;overweight&quot;,
                                &quot;obese&quot;)))</code></pre>
 <p>by specifying the boundaries of the intervals. In this case we obtain 4 intervals: <code>0-18.5</code>, <code>18.5-25</code>, <code>25-30</code> and <code>30-Inf</code>. We can now call <code>ggplot</code></p>
-<pre class="r"><code>boys2 %&gt;%
-  ggplot() +
+<pre class="r"><code>ggplot(data = boys2) +
   geom_point(aes(age, bmi, col = class))</code></pre>
 <pre><code>## Warning: Removed 21 rows containing missing values (geom_point).</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Although the different classifications have different colours, the colours are not conform the specifications of this exercise. We can manually override this:</p>
-<pre class="r"><code>boys2 %&gt;%
-  ggplot() +
+<pre class="r"><code>ggplot(data = boys2 ) +
   geom_point(aes(age, bmi, col = class)) +
   scale_color_manual(values = c(&quot;light blue&quot;, &quot;light green&quot;, &quot;orange&quot;, &quot;red&quot;))</code></pre>
 <pre><code>## Warning: Removed 21 rows containing missing values (geom_point).</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Because there are missing values, <code>ggplot2</code> displays a warning message. If we would like to not consider the missing values when plotting, we can simply exclude the <code>NA</code>s by using a <code>filter()</code>:</p>
-<pre class="r"><code>boys2 %&gt;% 
-  filter(!is.na(class)) %&gt;%
-  ggplot() +
+<pre class="r"><code>  ggplot( data = boys2[ !is.na( boys2$class ), ] ) +
   geom_point(aes(age, bmi, col = class)) +
   scale_color_manual(values = c(&quot;light blue&quot;, &quot;light green&quot;, &quot;orange&quot;, &quot;red&quot;))</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
@@ -264,8 +259,7 @@ p + geom_point()</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Create a histogram for <code>age</code> in the <code>boys</code> data set</strong></li>
 </ol>
-<pre class="r"><code>boys %&gt;%
-  ggplot() + 
+<pre class="r"><code>ggplot( data = boys ) + 
   geom_histogram(aes(age), binwidth = .4)</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Please note that the plots from <code>geom_histogram()</code> and <code>hist</code> use different calculations for the bars (bins) and hence may look slightly different.</p>
@@ -273,8 +267,7 @@ p + geom_point()</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Create a bar chart for <code>reg</code> in the boys data set</strong></li>
 </ol>
-<pre class="r"><code>boys %&gt;%
-  ggplot() + 
+<pre class="r"><code>ggplot( data = boys ) + 
   geom_bar(aes(reg))</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Note that <code>geom_bar</code> by default plots the <code>NA</code>’s, while <code>barplot()</code> omits the <code>NA</code>’s without warning. If we would not like to plot the <code>NA</code>s, then a simple <code>filter()</code> (see exercise 2) on the <code>boys</code> data is efficient.</p>
@@ -282,78 +275,10 @@ p + geom_point()</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><strong>Create a box plot for <code>hgt</code> with different boxes for <code>reg</code> in the <code>boys</code> data set</strong></li>
 </ol>
-<pre class="r"><code>boys %&gt;%
-  ggplot(aes(reg, hgt)) +
+<pre class="r"><code>ggplot( data = boys,  aes(reg, hgt)) +
   geom_boxplot()</code></pre>
 <pre><code>## Warning: Removed 20 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<!-- --- -->
-<!-- 6. **Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`).** -->
-<!-- With a standard plotting device in `R`: -->
-<!-- ```{r cache=TRUE} -->
-<!-- d1 <- boys %>% -->
-<!--   subset(reg == "city") %$% -->
-<!--   density(age) -->
-<!-- d2 <- boys %>% -->
-<!--   subset(reg != "city") %$%  -->
-<!--   density(age) -->
-<!-- plot(d1, col = "red", ylim = c(0, .08))  -->
-<!-- lines(d2, col = "blue")  -->
-<!-- ``` -->
-<!-- The above plot can also be generated without pipes, but results in an *ugly* main title. You may edit the title via the `main` argument in the `plot()` function. -->
-<!-- ```{r cache=TRUE} -->
-<!-- plot(density(boys$age[!is.na(boys$reg) & boys$reg == "city"]),  -->
-<!--      col = "red",  -->
-<!--      ylim = c(0, .08)) -->
-<!-- lines(density(boys$age[!is.na(boys$reg) & boys$reg != "city"]),  -->
-<!--       col = "blue") -->
-<!-- ``` -->
-<!-- With `ggplot2` everything looks much nicer: -->
-<!-- ```{r cache=TRUE} -->
-<!-- boys %>% -->
-<!--   mutate(area = ifelse(reg == "city", "city", "rural")) %>% -->
-<!--   filter(!is.na(area)) %>% -->
-<!--   ggplot(aes(age, fill = area)) + -->
-<!--   geom_density(alpha = .3) # some transparency -->
-<!-- ``` -->
-<!-- --- -->
-<!-- 7. **Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year's mean height in deviations from the overall average `hgt`** -->
-<!-- Let's not make things too complicated and just focus on `ggplot2`: -->
-<!-- ```{r} -->
-<!-- boys %>% -->
-<!--   mutate(Hgt = hgt - mean(hgt, na.rm = TRUE), -->
-<!--          Age = cut(age, 0:22, labels = 0:21)) %>% -->
-<!--   aggregate(Hgt ~ Age, data = ., mean) %>% #specify data = . to allow formula -->
-<!--   mutate(Diff = cut(Hgt, c(-Inf, 0, Inf), -->
-<!--                     labels = c("Below Average", "Above Average"))) %>% -->
-<!--   ggplot(aes(x = Age, y = Hgt, fill = Diff)) +  -->
-<!--   geom_bar(stat = "identity") + -->
-<!--   coord_flip() -->
-<!-- ``` -->
-<!-- We can clearly see that the average height in the group is reached just before age 7. The `aggregate()` function is used to return the `mean()` of deviation `Hgt` for every group in `Age`.  -->
-<!-- For example, if we would like the mean height `hgt` for every region `reg` in the `boys` data, we could call: -->
-<!-- ```{r} -->
-<!-- boys %>% -->
-<!--   aggregate(hgt ~ reg, data = ., FUN = mean) -->
-<!-- ``` -->
-<!-- We have to specify `data = .` in order to allow for the formula-style call to `aggregate()` - where the method is of class `formula`. However, the data set `boys` is parsed down the pipe as an object of class `data.frame`. The default evaluation of argument would therefore be -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(x, by, FUN) -->
-<!-- ``` -->
-<!-- and in the pipe this is by default evaluated as  -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(., hgt ~ reg, mean) -->
-<!-- ``` -->
-<!-- where `.` is the object parsed down the pipe. This `.` is automatically evaluated as the first argument, unless otherwise specified by the user. In most cases this works because the data is usually the first argument that is evaluated in a function. However, the result is not a valid call to `aggregate()` because the object we're parsing down the pipe has class `data.frame`. `aggregate()` would therefor try to run `aggregate.data.frame()`, but our code dictates an evaluation of the formula call. By assigning the `.` to `data = .`, we specifically call for a `formula` evaluation of `aggregate()`. This solves the mismatch and forces `aggregate()` to conform to class `formula`: -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(formula, data, FUN) -->
-<!-- ``` -->
-<!-- which is evaluated as  -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(hgt ~ reg, data = ., mean) -->
-<!-- ``` -->
-<!-- in the pipe. Problem solved! -->
-<!-- The specifics about calling functions and evaluating their arguments can always be found in the help. Try `?aggregate` to see all forms this function's call may take.  -->
 <hr />
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Read in the <code>sf</code> package, and open the shapefiles on the Danish municipalities from the course homepage. Plot the <code>REGIONNAVN</code> variable to see the Danish regions. Plot the municipal-level population</strong></li>
@@ -369,7 +294,7 @@ p + geom_point()</code></pre>
 ## projected CRS:  UTM_Zone_32_Northern_Hemisphere</code></pre>
 <pre class="r"><code>class(denmark)</code></pre>
 <pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
-<pre class="r"><code>denmark %&gt;% ggplot() + geom_sf()</code></pre>
+<pre class="r"><code>ggplot( data = denmark ) + geom_sf()</code></pre>
 <p><img src="Practical_D_walkthrough_ggplot_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Say we want to colour the maps by the administrative regions coded in the <code>REGIONNAVN</code> variable. Also, we could move the legend inside the plot and use a more colorblind-friendly color scale:</p>
 <pre class="r"><code>denmark %&gt;% ggplot( aes( fill = REGIONNAVN  ) ) + geom_sf() +

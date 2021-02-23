@@ -112,20 +112,20 @@ points(bmi ~ age, subset = class == "obese", col = "red", data = boys2)
 With the standard plotting device in `R`:
 
 ```{r cache=TRUE}
-boys %$%
-  hist(age, breaks = 50)
+hist(boys$age, breaks = 50)
 ```
 
 The `breaks = 50` overrides the default breaks between the bars. By default the plot would be
 
 ```{r cache=TRUE}
-boys %$%
-  hist(age)
+hist(boys$age)
 ```
-Using a pipe is a nice approach for this plot because it inherits the names of the objects we aim to plot. Without the pipe we might need to adjust the main title for the histogram:
+
+The title and axis label need to be fixed: 
 
 ```{r cache=TRUE}
-hist(boys$age, breaks = 50)
+hist(boys$age, breaks = 50, xlab = "Age", main = "Histogram")
+
 ```
 
 ---

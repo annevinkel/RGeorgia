@@ -3,7 +3,9 @@ title: "Practical D"
 author: "Gerko Vink, Erik-Jan van Kesteren & Anne Vinkel Hansen"
 date: "Statistical Programming in R"
 output:
-  html_document: default
+  html_document: 
+    self_contained: false
+    lib_dir: libs
   pdf_document: default
 ---
 

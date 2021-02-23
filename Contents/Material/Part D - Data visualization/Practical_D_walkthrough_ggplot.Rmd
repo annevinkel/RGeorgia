@@ -48,8 +48,7 @@ p + geom_point()
 Package `ggplot2` offers far greater flexibility in data visualization than the standard plotting devices in `R`. However, it has its own language, which allows you to easily expand graphs with additional commands. To make these expansions or layers clearly visible, it is advisable to use the plotting language conventions. For example,
 
 ```{r, eval = FALSE}
-mice::boys %>% 
-  ggplot(aes(age, bmi)) +
+  ggplot( data = mice::boys, aes(age, bmi)) +
   geom_point()
 ```
 
@@ -86,16 +85,14 @@ boys2 <-
 by specifying the boundaries of the intervals. In this case we obtain 4 intervals: `0-18.5`, `18.5-25`, `25-30` and `30-Inf`. We can now call `ggplot`
 
 ```{r cache=TRUE}
-boys2 %>%
-  ggplot() +
+ggplot(data = boys2) +
   geom_point(aes(age, bmi, col = class))
 ```
 
 Although the different classifications have different colours, the colours are not conform the specifications of this exercise. We can manually override this:
 
 ```{r cache=TRUE}
-boys2 %>%
-  ggplot() +
+ggplot(data = boys2 ) +
   geom_point(aes(age, bmi, col = class)) +
   scale_color_manual(values = c("light blue", "light green", "orange", "red"))
 ```
@@ -103,9 +100,7 @@ boys2 %>%
 Because there are missing values, `ggplot2` displays a warning message. If we would like to not consider the missing values when plotting, we can simply exclude the `NA`s by using a `filter()`:
 
 ```{r cache=TRUE}
-boys2 %>% 
-  filter(!is.na(class)) %>%
-  ggplot() +
+  ggplot( data = boys2[ !is.na( boys2$class ), ] ) +
   geom_point(aes(age, bmi, col = class)) +
   scale_color_manual(values = c("light blue", "light green", "orange", "red"))
 ```
@@ -117,8 +112,7 @@ Specifying a filter on the feature `class` is sufficient: age has no missings an
 3. **Create a histogram for `age` in the `boys` data set**
 
 ```{r cache=TRUE}
-boys %>%
-  ggplot() + 
+ggplot( data = boys ) + 
   geom_histogram(aes(age), binwidth = .4)
 ```
 
@@ -129,8 +123,7 @@ Please note that the plots from `geom_histogram()` and `hist` use different calc
 4. **Create a bar chart for `reg` in the boys data set**
 
 ```{r cache=TRUE}
-boys %>%
-  ggplot() + 
+ggplot( data = boys ) + 
   geom_bar(aes(reg))
 ```
 
@@ -141,101 +134,9 @@ Note that `geom_bar` by default plots the `NA`'s, while `barplot()` omits the `N
 5. **Create a box plot for `hgt` with different boxes for `reg` in the `boys` data set**
 
 ```{r cache=TRUE}
-boys %>%
-  ggplot(aes(reg, hgt)) +
+ggplot( data = boys,  aes(reg, hgt)) +
   geom_boxplot()
 ```
-
-<!-- --- -->
-
-<!-- 6. **Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`).** -->
-<!-- With a standard plotting device in `R`: -->
-
-<!-- ```{r cache=TRUE} -->
-<!-- d1 <- boys %>% -->
-<!--   subset(reg == "city") %$% -->
-<!--   density(age) -->
-<!-- d2 <- boys %>% -->
-<!--   subset(reg != "city") %$%  -->
-<!--   density(age) -->
-
-<!-- plot(d1, col = "red", ylim = c(0, .08))  -->
-<!-- lines(d2, col = "blue")  -->
-
-<!-- ``` -->
-
-<!-- The above plot can also be generated without pipes, but results in an *ugly* main title. You may edit the title via the `main` argument in the `plot()` function. -->
-
-<!-- ```{r cache=TRUE} -->
-<!-- plot(density(boys$age[!is.na(boys$reg) & boys$reg == "city"]),  -->
-<!--      col = "red",  -->
-<!--      ylim = c(0, .08)) -->
-<!-- lines(density(boys$age[!is.na(boys$reg) & boys$reg != "city"]),  -->
-<!--       col = "blue") -->
-<!-- ``` -->
-
-<!-- With `ggplot2` everything looks much nicer: -->
-
-<!-- ```{r cache=TRUE} -->
-<!-- boys %>% -->
-<!--   mutate(area = ifelse(reg == "city", "city", "rural")) %>% -->
-<!--   filter(!is.na(area)) %>% -->
-<!--   ggplot(aes(age, fill = area)) + -->
-<!--   geom_density(alpha = .3) # some transparency -->
-<!-- ``` -->
-
-<!-- --- -->
-
-<!-- 7. **Create a diverging bar chart for `hgt` in the `boys` data set, that displays for every `age` year that year's mean height in deviations from the overall average `hgt`** -->
-
-<!-- Let's not make things too complicated and just focus on `ggplot2`: -->
-
-<!-- ```{r} -->
-<!-- boys %>% -->
-<!--   mutate(Hgt = hgt - mean(hgt, na.rm = TRUE), -->
-<!--          Age = cut(age, 0:22, labels = 0:21)) %>% -->
-<!--   aggregate(Hgt ~ Age, data = ., mean) %>% #specify data = . to allow formula -->
-<!--   mutate(Diff = cut(Hgt, c(-Inf, 0, Inf), -->
-<!--                     labels = c("Below Average", "Above Average"))) %>% -->
-<!--   ggplot(aes(x = Age, y = Hgt, fill = Diff)) +  -->
-<!--   geom_bar(stat = "identity") + -->
-<!--   coord_flip() -->
-<!-- ``` -->
-
-<!-- We can clearly see that the average height in the group is reached just before age 7. The `aggregate()` function is used to return the `mean()` of deviation `Hgt` for every group in `Age`.  -->
-
-<!-- For example, if we would like the mean height `hgt` for every region `reg` in the `boys` data, we could call: -->
-
-<!-- ```{r} -->
-<!-- boys %>% -->
-<!--   aggregate(hgt ~ reg, data = ., FUN = mean) -->
-<!-- ``` -->
-
-<!-- We have to specify `data = .` in order to allow for the formula-style call to `aggregate()` - where the method is of class `formula`. However, the data set `boys` is parsed down the pipe as an object of class `data.frame`. The default evaluation of argument would therefore be -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(x, by, FUN) -->
-<!-- ``` -->
-
-<!-- and in the pipe this is by default evaluated as  -->
-
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(., hgt ~ reg, mean) -->
-<!-- ``` -->
-
-<!-- where `.` is the object parsed down the pipe. This `.` is automatically evaluated as the first argument, unless otherwise specified by the user. In most cases this works because the data is usually the first argument that is evaluated in a function. However, the result is not a valid call to `aggregate()` because the object we're parsing down the pipe has class `data.frame`. `aggregate()` would therefor try to run `aggregate.data.frame()`, but our code dictates an evaluation of the formula call. By assigning the `.` to `data = .`, we specifically call for a `formula` evaluation of `aggregate()`. This solves the mismatch and forces `aggregate()` to conform to class `formula`: -->
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(formula, data, FUN) -->
-<!-- ``` -->
-
-<!-- which is evaluated as  -->
-
-<!-- ```{r eval=FALSE} -->
-<!-- aggregate(hgt ~ reg, data = ., mean) -->
-<!-- ``` -->
-<!-- in the pipe. Problem solved! -->
-
-<!-- The specifics about calling functions and evaluating their arguments can always be found in the help. Try `?aggregate` to see all forms this function's call may take.  -->
-
 
 ---
 
@@ -247,10 +148,11 @@ class(denmark)
 ```
 
 ```{r}
-denmark %>% ggplot() + geom_sf()
+ggplot( data = denmark ) + geom_sf()
 ```
 
 Say we want to colour the maps by the administrative regions coded in the `REGIONNAVN` variable. Also, we could move the legend inside the plot and use a more colorblind-friendly color scale:
+
 ```{r}
 denmark %>% ggplot( aes( fill = REGIONNAVN  ) ) + geom_sf() +
   theme(legend.position = c(0.8,0.7)) +

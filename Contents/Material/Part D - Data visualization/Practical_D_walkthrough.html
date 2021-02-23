@@ -322,14 +322,13 @@ points(bmi ~ age, subset = class == &quot;obese&quot;, col = &quot;red&quot;, da
 <li><strong>Create a histogram for <code>age</code> in the <code>boys</code> data set</strong></li>
 </ol>
 <p>With the standard plotting device in <code>R</code>:</p>
-<pre class="r"><code>boys %$%
-  hist(age, breaks = 50)</code></pre>
+<pre class="r"><code>hist(boys$age, breaks = 50)</code></pre>
 <p><img src="Practical_D_walkthrough_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>The <code>breaks = 50</code> overrides the default breaks between the bars. By default the plot would be</p>
-<pre class="r"><code>boys %$%
-  hist(age)</code></pre>
-<p><img src="Practical_D_walkthrough_files/figure-html/unnamed-chunk-10-1.png" width="672" /> Using a pipe is a nice approach for this plot because it inherits the names of the objects we aim to plot. Without the pipe we might need to adjust the main title for the histogram:</p>
-<pre class="r"><code>hist(boys$age, breaks = 50)</code></pre>
+<pre class="r"><code>hist(boys$age)</code></pre>
+<p><img src="Practical_D_walkthrough_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>The title and axis label need to be fixed:</p>
+<pre class="r"><code>hist(boys$age, breaks = 50, xlab = &quot;Age&quot;, main = &quot;Histogram&quot;)</code></pre>
 <p><img src="Practical_D_walkthrough_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <hr />
 <ol start="4" style="list-style-type: decimal">
