@@ -144,4 +144,16 @@ mammalsleep[ mammalsleep$species %in%
       - Possibly in the form of Rmarkdown reports
 - Place the code, the data and the results in sensible places on your computer
 
-# Practical 
+
+## Now what?
+
+- **Now** we do a workshop where you work on geostat data
+  - Generate relevant summaries, tables etc
+  - I have an example (short and slapdash) report working on SILC data
+  
+- **After the course**
+  - The *further studies* tab on the webpage
+  - Try using this on your own data
+  - Feel free to write me with questions (aih@dst.dk)
+  
+# Workshop

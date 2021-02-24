@@ -30,6 +30,8 @@ The data is the SILC data for Belgium and is stored at this path:
 It contains data on Statistics on Income and Living Conditions for the year(s) 
 `r min(silc_p$PB110)`-`r `max(silc_p$PB110)`. 
 
+## Some tables
+
 We shall tabulate data by sex, marital status and year of birth. 
 
 ```{r, echo = F, message= F, warning =F}

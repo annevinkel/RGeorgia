@@ -224,11 +224,14 @@ The `sf` setup for `R` is relatively new, and a lot of material about spatial da
 ## Column 1
 
 ### Materials
-- Part E: Loops and functions
-    - [Lecture F](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
-    <!-- - [Practical F](Contents/Material/Part E - Functions apply and looping/Practical_E_barebone.html) -->
-    <!-- - [Practical F with solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html) -->
-    
+
+- Part F: Summary and workshop
+  - [Lecture F](Contents/Material/Part F - Summary and workshop/Lecture_F.html)
+  - [An example report - markdown](Contents/Material/Part F - Summary and workshop/Example_report.Rmd)
+  - [An example report - word document](Contents/Material/Part F - Summary and workshop/Example_report.docx)
+  - [Data for the example report](Contents/Material/Part F - Summary and workshop/BE_2013p_EUSILC.csv), 
+  [metadata](Contents/Material/Part F - Summary and workshop/EU SILC PUF metadata.xlsm)
+
 The exercises today will be replaced by a bring-your-own-data workshop. 
 
 ## Column 2

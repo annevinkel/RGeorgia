@@ -190,16 +190,16 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>This lecture</h2></hgroup><article  id="this-lecture" class="smaller ">
+<slide class=""><hgroup><h2>This lecture</h2></hgroup><article  class="smaller " id="this-lecture">
 
 <ul>
 <li><p>Summary</p></li>
 <li><p>Workshop introduction</p></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Using R</h2></hgroup><article  id="using-r" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Using R</h2></hgroup><article  class="smaller " id="using-r">
 
-</article></slide><slide class=""><hgroup><h2>Help</h2></hgroup><article  id="help" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Help</h2></hgroup><article  class="smaller " id="help">
 
 <ul>
 <li>Google is your friend</li>
@@ -211,7 +211,7 @@ slide:not(.current) .plotly.html-widget{
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>The basics</h2></hgroup><article  id="the-basics" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>The basics</h2></hgroup><article  class="smaller " id="the-basics">
 
 <ul>
 <li>Write commands directly in the console</li>
@@ -224,7 +224,7 @@ b &lt;- 0:5
 c &lt;- rep( c(&quot;Hi&quot;, &quot;there&quot;), 3)
 D &lt;- as.data.frame(cbind(a,b,c))</pre>
 
-</article></slide><slide class=""><hgroup><h2>Objects</h2></hgroup><article  id="objects" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Objects</h2></hgroup><article  class="smaller " id="objects">
 
 <p>Vectors and character vectors</p>
 
@@ -240,7 +240,7 @@ D &lt;- as.data.frame(cbind(a,b,c))</pre>
 
 <pre >## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Data frames</h2></hgroup><article  id="data-frames" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Data frames</h2></hgroup><article  class="smaller " id="data-frames">
 
 <p>Data sets for R</p>
 
@@ -257,7 +257,7 @@ D</pre>
 
 <p>Alternatively: <code>tibbles</code> or <code>data.tables</code></p>
 
-</article></slide><slide class=""><hgroup><h2>Subsetting</h2></hgroup><article  id="subsetting" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Subsetting</h2></hgroup><article  class="smaller " id="subsetting">
 
 <pre class = 'prettyprint lang-r'>D[1,3]</pre>
 
@@ -277,7 +277,7 @@ D</pre>
 <pre >## [1] &quot;1&quot;                &quot;8&quot;                &quot;42&quot;               &quot;3.14159265358979&quot;
 ## [5] &quot;8&quot;                &quot;1&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Pipes and the tidyverse</h2></hgroup><article  id="pipes-and-the-tidyverse" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Pipes and the tidyverse</h2></hgroup><article  class="smaller " id="pipes-and-the-tidyverse">
 
 <p>The tidyverse is a collection of packages that &ldquo;share an underlying design philosophy, grammar, and data structures&rdquo;. They make for easier data handling and visualization.</p>
 
@@ -289,7 +289,7 @@ starwars %&gt;%
   group_by( homeworld ) %&gt;% 
   summarise( n = n(), mean.height = mean(height))</pre>
 
-</article></slide><slide class=""><hgroup><h2>Plotting</h2></hgroup><article  id="plotting" class="smaller smaller">
+</article></slide><slide class=""><hgroup><h2>Plotting</h2></hgroup><article  class="smaller smaller" id="plotting">
 
 <p>Plots in base R are fast and easy:</p>
 
@@ -301,16 +301,16 @@ starwars %&gt;%
 
 <p><img src="Lecture_F_files/figure-html/unnamed-chunk-6-2.png" width="768" /></p>
 
-</article></slide><slide class=""><hgroup><h2>ggplot2</h2></hgroup><article  id="ggplot2" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>ggplot2</h2></hgroup><article  class="smaller " id="ggplot2">
 
 <pre class = 'prettyprint lang-r'>library(ggplot2)
 starwars %&gt;% ggplot( aes( x = height)) + geom_histogram()</pre>
 
 <p><img src="Lecture_F_files/figure-html/unnamed-chunk-7-1.png" width="768" /></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Working in <code>R</code></h2></hgroup><article  id="working-in-r" class="smaller ">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Working in <code>R</code></h2></hgroup><article  class="smaller " id="working-in-r">
 
-</article></slide><slide class=""><hgroup><h2>Working code-centrically</h2></hgroup><article  id="working-code-centrically" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Working code-centrically</h2></hgroup><article  class="smaller " id="working-code-centrically">
 
 <ul>
 <li>A single file of code, or a series of code files stored in the same place produce all your results</li>
@@ -320,7 +320,7 @@ starwars %&gt;% ggplot( aes( x = height)) + geom_histogram()</pre>
 <li>Not unique to R</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Working code-centrically</h2></hgroup><article  id="working-code-centrically-1" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>Working code-centrically</h2></hgroup><article  class="smaller " id="working-code-centrically-1">
 
 <ul>
 <li>Work in projects to make your code more self-contained</li>
@@ -345,7 +345,7 @@ summary(mammalsleep)
 mammalsleep[ mammalsleep$species %in% 
                c(&quot;Echidna&quot;, &quot;Lesser short-tailed shrew&quot;, &quot;Musk shrew&quot;) , ]</pre>
 
-</article></slide><slide class=""><hgroup><h2>The R workflow</h2></hgroup><article  id="the-r-workflow" class="smaller ">
+</article></slide><slide class=""><hgroup><h2>The R workflow</h2></hgroup><article  class="smaller " id="the-r-workflow">
 
 <ul>
 <li><strong>Three separate things:</strong> The data, the results and the code producing the results</li>
@@ -363,7 +363,25 @@ mammalsleep[ mammalsleep$species %in%
 <li>Place the code, the data and the results in sensible places on your computer</li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Practical</h2></hgroup><article  id="practical" class="smaller "></article></slide>
+</article></slide><slide class=""><hgroup><h2>Now what?</h2></hgroup><article  class="smaller " id="now-what">
+
+<ul>
+<li><strong>Now</strong> we do a workshop where you work on geostat data
+
+<ul>
+<li>Generate relevant summaries, tables etc</li>
+<li>I have an example (short and slapdash) report working on SILC data</li>
+</ul></li>
+<li><strong>After the course</strong>
+
+<ul>
+<li>The <em>further studies</em> tab on the webpage</li>
+<li>Try using this on your own data</li>
+<li>Feel free to write me with questions (<a href='mailto:aih@dst.dk' title=''>aih@dst.dk</a>)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Workshop</h2></hgroup><article  class="smaller " id="workshop"></article></slide>
 
 
   <slide class="backdrop"></slide>
