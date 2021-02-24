@@ -1,0 +1,95 @@
+---
+title: "A report on the SILC data for Belgium"
+author: "Anne Vinkel Hansen"
+output:
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+par(mar = c(0,0,0,0))
+```
+
+## The data
+
+We use `read.delim` to read in data here, but recall `read_sav` in the `haven` 
+package, and `read_xlsx` in the `readxl`` package. 
+
+```{r, include=F}
+### Reading in data
+
+library(lubridate) # For handling dates 
+
+silc_p <- read.delim("BE_2013p_EUSILC.csv", sep=";")
+```
+
+The data is the SILC data for Belgium and is stored at this path: 
+
+`r getwd()`. 
+
+It contains data on Statistics on Income and Living Conditions for the year(s) 
+`r min(silc_p$PB110)`-`r `max(silc_p$PB110)`. 
+
+We shall tabulate data by sex, marital status and year of birth. 
+
+```{r, echo = F, message= F, warning =F}
+
+# First, we want to group year of birth into intervals
+
+silc_p$YEAR_OF_BIRTH <- cut( silc_p$PB140
+                           , breaks = seq( from = 1930, to = 2010, by=20)
+                           , right = F
+                           , labels = c("1930-49", "1950-69", "1970-89","1990-2009"))
+
+# We want a more informative format on Sex and marital status
+
+silc_p$SEX <- factor( silc_p$PB150, levels = c(1,2), labels = c("Male", "Female"))
+
+silc_p$MARITAL_STATUS = factor( silc_p$PB190, 
+                                levels = 1:5,
+                                labels = c( "Never married","Married","Separated","Widowed","Divorced")
+)
+
+```
+Basic tables are functional but somewhat lacking. They can be made prettier with 
+the `knitr` package. 
+
+```{r, echo = F, message= F}
+library(knitr)
+library(dplyr)
+
+table( silc_p$YEAR_OF_BIRTH, silc_p$SEX) %>% kable()
+```
+
+For a more powerful, if syntactically heavy approach, the `tables` package is an 
+option. See `vignette(tables)`
+
+```{r, echo = F, message= F}
+library(tables)
+library(kableExtra)
+
+# Syntax that makes a table
+tab <- tabular( 
+    1 + YEAR_OF_BIRTH + MARITAL_STATUS ~ 
+      SEX*( (N=1) + Percent("col")*Format(digits=1))
+  , data = silc_p
+  )
+
+tab
+```
+
+We may want to do some descriptive plots, say of year of birth by sex
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+
+ggplot( data = silc_p
+      , aes( x = PB140)) + 
+  geom_histogram( aes( y =..density.. )) + 
+  geom_density( col = "magenta") +
+  facet_wrap( ~ SEX) + 
+  xlab( "Year of birth" )
+```
+
+
+

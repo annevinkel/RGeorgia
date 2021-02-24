@@ -1,0 +1,147 @@
+---
+title: 'Summary and workshop'
+author: "Anne Vinkel"
+date: "Statistical Programming with R"
+output:
+  ioslides_presentation:
+    fig_height: 5
+    fig_width: 8
+    logo: logo_en.png
+    transition: faster
+    smaller: true
+    html_document:
+    self_contained: false
+    lib_dir: libs
+  beamer_presentation: default
+---
+
+## This lecture
+
+- Summary 
+
+- Workshop introduction
+
+# Using R
+
+## Help 
+
+- Google is your friend
+- As is the help file. 
+  - If you know the name of the function that performs an operation, e.g. `anova()`, then you just type `?anova` or `help(anova)` in the console. 
+  - If you do not know the name of the function: type `??` followed by your search criterion. For example `??anova` returns a list of all help pages that contain the word 'anova'
+
+
+## The basics
+
+- Write commands directly in the console
+- Or write code in the editor and submit with Ctrl + Enter
+- Assign values to objects with `<-`
+
+```{r, results = "hide"}
+a <- c(1, 8, 42, pi, 2^3, 1)
+b <- 0:5
+c <- rep( c("Hi", "there"), 3)
+D <- as.data.frame(cbind(a,b,c))
+```
+
+## Objects
+Vectors and character vectors
+```{r}
+c(1,2,3,4,5)
+1:5
+as.character(1:5)
+```
+
+## Data frames
+Data sets for R
+
+```{r}
+D <- as.data.frame(cbind(a,b,c))
+D
+```
+Alternatively: `tibbles` or `data.tables` 
+
+## Subsetting 
+
+```{r}
+D[1,3]
+D[1,]
+D[,2]
+D$a
+```
+
+
+## Pipes and the tidyverse
+
+The tidyverse is a collection of packages that "share an underlying design philosophy, grammar, and data structures". They make for easier data handling and visualization. 
+
+The pipe %>% allows for chained method calls that make code much more readable
+```{r, results="hide", message = F}
+library(dplyr)
+starwars %>%
+  subset( species == "Human" ) %>%
+  group_by( homeworld ) %>% 
+  summarise( n = n(), mean.height = mean(height))
+```
+
+## Plotting {.smaller}
+Plots in base R are fast and easy:
+```{r}
+plot(starwars$height, starwars$mass)
+hist(starwars$height)
+```
+
+## ggplot2
+```{r, warning=F, message=F}
+library(ggplot2)
+starwars %>% ggplot( aes( x = height)) + geom_histogram()
+```
+
+# Working in `R`
+
+## Working code-centrically
+
+- A single file of code, or a series of code files stored in the same place produce all your results
+- Separates data from results
+- Can be run non-interactively
+- Allows for reproducibility
+- Not unique to R
+
+
+## Working code-centrically
+
+- Work in projects to make your code more self-contained
+- Use comments, spacing and indentation to make your code readable
+
+```{r, eval = F}
+# Look at this -----------------------------------------------------------------
+str(mammalsleep)
+summary(mammalsleep)
+mammalsleep[mammalsleep$species%in%c("Echidna","Lesser short-tailed shrew","Musk shrew"),]
+
+
+# Compared with this -----------------------------------------------------------
+
+# Structure of the "mammalsleep" data in the mice package
+str(mammalsleep)
+
+# Data summary
+summary(mammalsleep)
+
+# Pick out three specific rows
+mammalsleep[ mammalsleep$species %in% 
+               c("Echidna", "Lesser short-tailed shrew", "Musk shrew") , ]
+```
+
+
+## The R workflow
+
+- **Three separate things:** The data, the results and the code producing the results
+- The code:
+   - Reads in data
+   - Performs checks, transformations and analyses
+   - Creates output
+      - Possibly in the form of Rmarkdown reports
+- Place the code, the data and the results in sensible places on your computer
+
+# Practical 

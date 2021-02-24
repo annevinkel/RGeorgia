@@ -150,33 +150,33 @@ boys %$%
 ```
 
 
-<!-- --- -->
+---
 
-<!-- 6. **Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`).** -->
-<!-- With a standard plotting device in `R`: -->
+6. **Create a density plot for `age` with different curves for boys from the `city` and boys from rural areas (`!city`).**
+With a standard plotting device in `R`:
 
-<!-- ```{r cache=TRUE} -->
-<!-- d1 <- boys %>% -->
-<!--   subset(reg == "city") %$% -->
-<!--   density(age) -->
-<!-- d2 <- boys %>% -->
-<!--   subset(reg != "city") %$%  -->
-<!--   density(age) -->
+```{r cache=TRUE}
+d1 <- boys %>%
+  subset(reg == "city") %$%
+  density(age)
+d2 <- boys %>%
+  subset(reg != "city") %$%
+  density(age)
 
-<!-- plot(d1, col = "red", ylim = c(0, .08))  -->
-<!-- lines(d2, col = "blue")  -->
+plot(d1, col = "red", ylim = c(0, .08))
+lines(d2, col = "blue")
 
-<!-- ``` -->
+```
 
-<!-- The above plot can also be generated without pipes, but results in an *ugly* main title. You may edit the title via the `main` argument in the `plot()` function. -->
+The above plot can also be generated without pipes, but results in an *ugly* main title. You may edit the title via the `main` argument in the `plot()` function.
 
-<!-- ```{r cache=TRUE} -->
-<!-- plot(density(boys$age[!is.na(boys$reg) & boys$reg == "city"]),  -->
-<!--      col = "red",  -->
-<!--      ylim = c(0, .08)) -->
-<!-- lines(density(boys$age[!is.na(boys$reg) & boys$reg != "city"]),  -->
-<!--       col = "blue") -->
-<!-- ``` -->
+```{r cache=TRUE}
+plot(density(boys$age[!is.na(boys$reg) & boys$reg == "city"]),
+     col = "red",
+     ylim = c(0, .08))
+lines(density(boys$age[!is.na(boys$reg) & boys$reg != "city"]),
+      col = "blue")
+```
 
 <!-- With `ggplot2` everything looks much nicer: -->
 
