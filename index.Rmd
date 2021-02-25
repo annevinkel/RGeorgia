@@ -227,6 +227,7 @@ The `sf` setup for `R` is relatively new, and a lot of material about spatial da
 
 - Part F: Summary and workshop
   - [Lecture F](Contents/Material/Part F - Summary and workshop/Lecture_F.html)
+  - [An example analysis](Contents/Material/Part F - Summary and workshop/example_analysis.R)
   - [An example report - markdown](Contents/Material/Part F - Summary and workshop/Example_report.Rmd)
   - [An example report - word document](Contents/Material/Part F - Summary and workshop/Example_report.docx)
   - [Data for the example report](Contents/Material/Part F - Summary and workshop/BE_2013p_EUSILC.csv), 

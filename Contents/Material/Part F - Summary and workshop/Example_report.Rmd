@@ -10,6 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 par(mar = c(0,0,0,0))
 ```
 
+This report is generated in Rstudio using markdown. To generate a Word document 
+from this .Rmd file, press the "Knit" icon and choose "Knit to Word".
+
 ## The data
 
 We use `read.delim` to read in data here, but recall `read_sav` in the `haven` 
