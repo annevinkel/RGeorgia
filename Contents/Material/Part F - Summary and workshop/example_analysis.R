@@ -60,12 +60,28 @@ tab
 
 library(ggplot2)
 
-ggplot( data = silc_p
+fig1 <- ggplot( data = silc_p
         , aes( x = PB140)) + 
   geom_histogram( aes( y =..density.. )) + 
   geom_density( col = "magenta") +
   facet_wrap( ~ SEX) + 
   xlab( "Year of birth" )
 
+fig1
+
+
+# That's nice, but it's not standard. We use a theme to make it standard, 
+# and set the colours to DST standard 
+
+source("DST_ggplot2.R")
+
+ggplot( data = silc_p
+               , aes( x = PB140)) + 
+  geom_histogram( aes( y =..density.. ),
+                  binwidth = 5,
+                  fill = dst_lblå[1]) + 
+  geom_density( col = dst_rød[1], size = 1) +
+  facet_wrap( ~ SEX) + 
+  xlab( "Year of birth" ) + dst_theme
 
 
