@@ -90,6 +90,23 @@ if (a > 5){
 }
 ```
 
+
+## A more useful example 
+
+
+```{r}
+data <- Pima.tr
+if ( any( is.na( data$bmi )  )){
+  print("BMI is missing for some observations. This may cause issues")
+} 
+
+data <- Pima.tr2
+if ( any( is.na( data$bmi )  )){
+  print("BMI is missing for some observations. This may cause issues")
+} 
+
+```
+
 ## For-loops
 
 - Loops are used when we want to perform some repetitive calculations 
@@ -135,20 +152,24 @@ for (i in 1:6){
 ```
 
 ##
-- List all out of the 144 cats weighting more than 3.5 kg
+- List all out of the 144 cats weighting more than 3.7 kg
 ```{r}
 for (i in 1:nrow(cats)){
-  if (cats$Bwt[i] > 3.5){
-    cat("Cat no.", i, "weighs more than 3.5 kg, namely", cats$Bwt[i], "kg\n")
+  if (cats$Bwt[i] > 3.7){
+    cat("Cat no.", i, 
+        "weighs more than 3.7 kg, namely", cats$Bwt[i], "kg\n")
   }
 }
 ```
+
+Note: The `cat` function con**cat**enates and prints. 
 
 ##
 - List the class of the different columns in the `cats` data
 ```{r}
 for (i in 1:ncol(cats)){
-  print(class(cats[, i]))
+  cat( "The column", names(cats)[i], 
+       "has type", class(cats[, i]), "\n")
 }
 ```
 
@@ -379,5 +400,6 @@ areDivisible(9, 3, printInput = FALSE)
 ## Practical E
 
 - Exercise 1 to 6 are about `for`-loops and conditional execution. These are important!
-- Exerise 7 to 13 are about using the apply-family to summarise data in different ways. Exercises 7 and especially 8 are most important. Exercises 11-13 practise writing simple functions but includes a bit of string-handling.
+- Exerise 7 to 13 are about using the apply-family to summarise data in different ways. Exercises 7 and especially 8 are most important. 
+- Exercises 11-13 practise writing simple functions but includes a bit of string-handling.
 - Exercise 14 is more challenging and should probably just be studied.

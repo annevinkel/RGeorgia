@@ -3304,6 +3304,20 @@ if (a &gt; 5){
 
 <pre >## [1] &quot;a is larger than 5&quot;</pre>
 
+</article></slide><slide class=""><hgroup><h2>A more useful example</h2></hgroup><article  id="a-more-useful-example">
+
+<pre class = 'prettyprint lang-r'>data &lt;- Pima.tr
+if ( any( is.na( data$bmi )  )){
+  print(&quot;BMI is missing for some observations. This may cause issues&quot;)
+} 
+
+data &lt;- Pima.tr2
+if ( any( is.na( data$bmi )  )){
+  print(&quot;BMI is missing for some observations. This may cause issues&quot;)
+} </pre>
+
+<pre >## [1] &quot;BMI is missing for some observations. This may cause issues&quot;</pre>
+
 </article></slide><slide class=""><hgroup><h2>For-loops</h2></hgroup><article  id="for-loops">
 
 <ul>
@@ -3312,7 +3326,7 @@ if (a &gt; 5){
 <li>Consider a simple task as printing the numbers from 1 to 6 one-by-one</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="small" id="section-3">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-3" class="small">
 
 <pre class = 'prettyprint lang-r'>print(1)</pre>
 
@@ -3326,7 +3340,7 @@ if (a &gt; 5){
 
 <pre >## [1] 3</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="small" id="section-4">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-4" class="small">
 
 <pre class = 'prettyprint lang-r'>print(4)</pre>
 
@@ -3390,24 +3404,22 @@ if (a &gt; 5){
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-8">
 
 <ul>
-<li>List all out of the 144 cats weighting more than 3.5 kg</li>
+<li>List all out of the 144 cats weighting more than 3.7 kg</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>for (i in 1:nrow(cats)){
-  if (cats$Bwt[i] &gt; 3.5){
-    cat(&quot;Cat no.&quot;, i, &quot;weighs more than 3.5 kg, namely&quot;, cats$Bwt[i], &quot;kg\n&quot;)
+  if (cats$Bwt[i] &gt; 3.7){
+    cat(&quot;Cat no.&quot;, i, 
+        &quot;weighs more than 3.7 kg, namely&quot;, cats$Bwt[i], &quot;kg\n&quot;)
   }
 }</pre>
 
-<pre >## Cat no. 136 weighs more than 3.5 kg, namely 3.6 kg
-## Cat no. 137 weighs more than 3.5 kg, namely 3.6 kg
-## Cat no. 138 weighs more than 3.5 kg, namely 3.6 kg
-## Cat no. 139 weighs more than 3.5 kg, namely 3.6 kg
-## Cat no. 140 weighs more than 3.5 kg, namely 3.7 kg
-## Cat no. 141 weighs more than 3.5 kg, namely 3.8 kg
-## Cat no. 142 weighs more than 3.5 kg, namely 3.8 kg
-## Cat no. 143 weighs more than 3.5 kg, namely 3.9 kg
-## Cat no. 144 weighs more than 3.5 kg, namely 3.9 kg</pre>
+<pre >## Cat no. 141 weighs more than 3.7 kg, namely 3.8 kg
+## Cat no. 142 weighs more than 3.7 kg, namely 3.8 kg
+## Cat no. 143 weighs more than 3.7 kg, namely 3.9 kg
+## Cat no. 144 weighs more than 3.7 kg, namely 3.9 kg</pre>
+
+<p>Note: The <code>cat</code> function con<strong>cat</strong>enates and prints.</p>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-9">
 
@@ -3416,12 +3428,13 @@ if (a &gt; 5){
 </ul>
 
 <pre class = 'prettyprint lang-r'>for (i in 1:ncol(cats)){
-  print(class(cats[, i]))
+  cat( &quot;The column&quot;, names(cats)[i], 
+       &quot;has type&quot;, class(cats[, i]), &quot;\n&quot;)
 }</pre>
 
-<pre >## [1] &quot;factor&quot;
-## [1] &quot;numeric&quot;
-## [1] &quot;numeric&quot;</pre>
+<pre >## The column Sex has type factor 
+## The column Bwt has type numeric 
+## The column Hwt has type numeric</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-10">
 
@@ -3477,7 +3490,7 @@ for (list.item in my.list){
 ## One element is Hello. 
 ## One element is TRUE</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller" id="section-12">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-12" class="smaller">
 
 <ul>
 <li>But if we want to change the item, we have to be able to access it, so we are better off using <code>1:length(list)</code></li>
@@ -3528,7 +3541,7 @@ MyList</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="build" id="section-13">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-13" class="build">
 
 <ul>
 <li>Calculate the mean for all columns in the cats data sans 1 (which is sex)</li>
@@ -3557,31 +3570,31 @@ MyList</pre>
 <pre class = 'prettyprint lang-r'>rand.mat &lt;- matrix(rnorm(24), nrow = 4, ncol = 6)
 rand.mat</pre>
 
-<pre >##           [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
-## [1,] -1.806141 -0.4283587 -0.3227969  1.5624976  0.5917907 -0.2393806
-## [2,]  0.421635 -0.1409153 -0.7192245 -0.9471022  1.7064073 -0.8123301
-## [3,]  1.737592  0.2152825  1.8410014  1.9114148  0.6012852  1.5632086
-## [4,]  1.100951 -1.2042099  0.2798130  1.1350610 -0.7886679 -1.5374710</pre>
+<pre >##             [,1]          [,2]       [,3]       [,4]       [,5]       [,6]
+## [1,] -0.30065127  8.248486e-01 -1.1981391 -0.4581885 1.00194721 -0.7321559
+## [2,]  0.02699204  1.100911e+00  0.5711162  0.7171924 0.01633755 -0.1371207
+## [3,] -0.25953845 -8.149271e-01 -0.3383892 -0.9916609 0.40255505  1.7776831
+## [4,]  0.44042523  3.158323e-05  0.6196350 -0.5603651 0.57323002 -1.0755254</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-15">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = max)</pre>
 
-<pre >## [1] 1.562498 1.706407 1.911415 1.135061</pre>
+<pre >## [1] 1.001947 1.100911 1.777683 0.619635</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = max)</pre>
 
-<pre >## [1] 1.7375916 0.2152825 1.8410014 1.9114148 1.7064073 1.5632086</pre>
+<pre >## [1] 0.4404252 1.1009114 0.6196350 0.7171924 1.0019472 1.7776831</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-16">
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 2, FUN = sum)</pre>
 
-<pre >## [1]  1.454037 -1.558201  1.078793  3.661871  2.110815 -1.025973</pre>
+<pre >## [1] -0.09277245  1.11086447 -0.34577713 -1.29302211  1.99406983 -0.16711887</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, MARGIN = 1, FUN = var)</pre>
 
-<pre >## [1] 1.2659948 1.0286718 0.5182557 1.3686288</pre>
+<pre >## [1] 0.7664506 0.2388353 1.0286379 0.4754555</pre>
 
 </article></slide><slide class=""><hgroup><h2><code>sapply()</code></h2></hgroup><article  id="sapply">
 
@@ -3723,7 +3736,7 @@ squared(-2)</pre>
 
 <pre >## [1] 1 4 9</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller" id="section-23">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-23" class="smaller">
 
 <ul>
 <li>We can use our own function with <code>apply()</code> just like all other functions</li>
@@ -3731,19 +3744,19 @@ squared(-2)</pre>
 
 <pre class = 'prettyprint lang-r'>rand.mat</pre>
 
-<pre >##           [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
-## [1,] -1.806141 -0.4283587 -0.3227969  1.5624976  0.5917907 -0.2393806
-## [2,]  0.421635 -0.1409153 -0.7192245 -0.9471022  1.7064073 -0.8123301
-## [3,]  1.737592  0.2152825  1.8410014  1.9114148  0.6012852  1.5632086
-## [4,]  1.100951 -1.2042099  0.2798130  1.1350610 -0.7886679 -1.5374710</pre>
+<pre >##             [,1]          [,2]       [,3]       [,4]       [,5]       [,6]
+## [1,] -0.30065127  8.248486e-01 -1.1981391 -0.4581885 1.00194721 -0.7321559
+## [2,]  0.02699204  1.100911e+00  0.5711162  0.7171924 0.01633755 -0.1371207
+## [3,] -0.25953845 -8.149271e-01 -0.3383892 -0.9916609 0.40255505  1.7776831
+## [4,]  0.44042523  3.158323e-05  0.6196350 -0.5603651 0.57323002 -1.0755254</pre>
 
 <pre class = 'prettyprint lang-r'>apply(rand.mat, 2, squared)</pre>
 
-<pre >##           [,1]       [,2]       [,3]      [,4]      [,5]       [,6]
-## [1,] 3.2621439 0.18349116 0.10419782 2.4413988 0.3502162 0.05730309
-## [2,] 0.1777761 0.01985714 0.51728393 0.8970026 2.9118260 0.65988017
-## [3,] 3.0192246 0.04634654 3.38928616 3.6535064 0.3615438 2.44362118
-## [4,] 1.2120927 1.45012150 0.07829532 1.2883635 0.6219970 2.36381698</pre>
+<pre >##              [,1]         [,2]      [,3]      [,4]         [,5]       [,6]
+## [1,] 0.0903911875 6.803752e-01 1.4355372 0.2099367 1.0038982123 0.53605232
+## [2,] 0.0007285703 1.212006e+00 0.3261737 0.5143650 0.0002669154 0.01880209
+## [3,] 0.0673602057 6.641062e-01 0.1145073 0.9833914 0.1620505678 3.16015735
+## [4,] 0.1939743857 9.975007e-10 0.3839475 0.3140091 0.3285926593 1.15675483</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-24">
 
@@ -3763,7 +3776,7 @@ squared(-2)</pre>
   remainder == 0
 }</pre>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="build" id="section-25">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-25" class="build">
 
 <pre class = 'prettyprint lang-r'>areDivisible(3, 10)</pre>
 
@@ -3795,7 +3808,7 @@ squared(-2)</pre>
 <li>Notice the sleek one-liner replacing the previous nine, but be carefull!</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  class="smaller" id="section-26">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-26" class="smaller">
 
 <pre class = 'prettyprint lang-r'>areDivisible(3, 10)</pre>
 
@@ -3817,7 +3830,8 @@ squared(-2)</pre>
 
 <ul>
 <li>Exercise 1 to 6 are about <code>for</code>-loops and conditional execution. These are important!</li>
-<li>Exerise 7 to 13 are about using the apply-family to summarise data in different ways. Exercises 7 and especially 8 are most important. Exercises 11-13 practise writing simple functions but includes a bit of string-handling.</li>
+<li>Exerise 7 to 13 are about using the apply-family to summarise data in different ways. Exercises 7 and especially 8 are most important.</li>
+<li>Exercises 11-13 practise writing simple functions but includes a bit of string-handling.</li>
 <li>Exercise 14 is more challenging and should probably just be studied.</li>
 </ul></article></slide>
 

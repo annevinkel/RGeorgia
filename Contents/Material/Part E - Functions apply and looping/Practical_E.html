@@ -207,7 +207,7 @@ summary {
 </ol>
 <hr />
 <ol start="3" style="list-style-type: decimal">
-<li><strong>Try to do the same thing without a for-loop, by subsetting a vector from 0 to 10 directly. Tip: Either create a Boolean vector or explore the subset-function.</strong></li>
+<li><strong>Try to do the same thing without a for-loop, by subsetting a vector from 0 to 10 directly. </strong></li>
 </ol>
 <hr />
 <ol start="4" style="list-style-type: decimal">
@@ -228,7 +228,7 @@ summary {
 <li><strong>Modify your loop to put <code>"Sum &gt; 8"</code> in the matrix in the cells where that is true.</strong></li>
 </ol>
 <hr />
-<p>The <code>anscombe</code> data set is a wonderful data set from 1973 by Francis J. Anscombe aimed to demonstrate that pairs of variables can have the same statistical properties, while having completely different graphical representations. We will be using this data set more this week. If you’d like to know more about <code>anscombe</code>, you can simply call <code>?anscombe</code> to enter the help.</p>
+<p>The <code>anscombe</code> data set is a wonderful data set from 1973 by Francis J. Anscombe aimed to demonstrate that pairs of variables can have the same statistical properties, while having completely different graphical representations. If you’d like to know more about <code>anscombe</code>, you can simply call <code>?anscombe</code> to enter the help.</p>
 <p>You can directly call <code>anscombe</code> from your console because the <code>datasets</code> package is a base package in <code>R</code>. This means that it is always included and loaded when you start an <code>R</code> instance. In general, when you would like to access functions or data sets from packages that are not automatically loaded, we don’t have to explicitly load the package. We can also call <code>package::thing-we-need</code> to directly ‘grab’ the <code>thing-we-need</code> from the <code>package</code> namespace. For example,</p>
 <pre class="r"><code>test &lt;- datasets::anscombe
 identical(test, anscombe) #test if identical</code></pre>
@@ -266,7 +266,7 @@ identical(test, anscombe) #test if identical</code></pre>
 </ol>
 <hr />
 <p>The <code>mammalsleep</code> data set from the <code>mice</code> package shows data collected by Allison and Cicchetti (1976). It holds information for 62 mammal species on the interrelationship between sleep, ecological, and constitutional variables. The dataset contains missing values on five variables, which poses challenges when analyses include these variables.</p>
-<p>We will use this datasets also more frequently this week, but we use it only once today. Therefore we could more efficiently call <code>mice::mammalsleep</code> to obtain only the <code>mammalsleep</code> data set without loading the whole <code>mice</code> package.</p>
+<p>We have used this dataset previously this week, but we use it only once today. Therefore we could more efficiently call <code>mice::mammalsleep</code> to obtain only the <code>mammalsleep</code> data set without loading the whole <code>mice</code> package.</p>
 <hr />
 <ol start="14" style="list-style-type: decimal">
 <li><strong>Write a function that takes a vector as input, and that returns a string that contains either (1) the mean and standard deviation (<code>sd()</code>) of the vector, if the vector is numeric, or (2) the <code>levels</code> of the vector, if it is categorical.</strong></li>

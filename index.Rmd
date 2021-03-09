@@ -244,6 +244,32 @@ The exercises today will be replaced by a bring-your-own-data workshop.
 The above links are useful references that connect to today's materials.
 
 
+# Wednesday 3rd
+
+## Column 1
+
+- Part E: The apply family, loops and functions
+  - [Lecture E](Contents/Material/Part E - Functions apply and looping/Lecture_E.html)
+  - [Practical E](Contents/Material/Part E - Functions apply and looping/Practical_E.html)
+  - [Practical E solutions](Contents/Material/Part E - Functions apply and looping/Practical_E_walkthrough.html)
+
+## Column 2
+
+### Useful links
+- Loops:
+  - [Hands-on programming with R](https://rstudio-education.github.io/hopr) Chapter 11 
+  deals with loops and chapter 12 with writing vectorized code to increase speed
+  - [R for data science chapter 21](https://r4ds.had.co.nz/iteration.html) deals with iteration 
+  in a tidyverse framework, including the `map` functions, which are tidyverse analogues to the 
+  `apply` family
+- The `apply`family:
+  - [A datacamp tutorial](https://www.datacamp.com/community/tutorials/r-tutorial-apply-family)
+  - [Stack Overflow discussion on the apply family]( https://stackoverflow.com/questions/3505701/grouping-functions-tapply-by-aggregate-and-the-apply-family)
+- Functions:
+  - [Chapter 19 of R for Data Science](https://r4ds.had.co.nz/functions.html) is a robust introduction
+  - [Chapter 6 of Advanced R](https://adv-r.hadley.nz/functions.html) gives a more rigorous 
+  grounding
+
 # Further studies
 
 ## Column 1

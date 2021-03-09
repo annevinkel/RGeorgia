@@ -61,9 +61,9 @@ tab
 library(ggplot2)
 
 fig1 <- ggplot( data = silc_p
-        , aes( x = PB140)) + 
-  geom_histogram( aes( y =..density.. )) + 
-  geom_density( col = "magenta") +
+        , aes( x = PB140) ) + 
+  geom_histogram( aes( y =..density..)) + 
+  geom_density() +
   facet_wrap( ~ SEX) + 
   xlab( "Year of birth" )
 
@@ -74,6 +74,8 @@ fig1
 # and set the colours to DST standard 
 
 source("DST_ggplot2.R")
+
+fig1 + dst_theme
 
 ggplot( data = silc_p
                , aes( x = PB140)) + 
